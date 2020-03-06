@@ -4,7 +4,7 @@ const worldDataSet = [
     [{v: 'KR', f: 'Süd-Korea'}, 6593, 44], 
     [{v: 'IR', f: 'Iran'}, 4747, 124], 
     [{v: 'IT', f: 'Italia'}, 3858, 148], 
-    [{v: 'DE', f: 'Deutschland'}, 534, 0], 
+    [{v: 'DE', f: 'Deutschland'}, 639, 0], 
     [{v: 'JP', f: 'Japan'}, 381, 6], 
     [{v: 'FR', f: 'Frankreich'}, 423, 7],
     [{v: 'ES', f: 'Spanien'}, 360, 5], 
@@ -156,7 +156,8 @@ const worldDataSet = [
         [new Date(2020, 2, 2), 129, 0],
         [new Date(2020, 2, 3), 157, 0],    
         [new Date(2020, 2, 4), 196, 0],   
-        [new Date(2020, 2, 5), 400, 0]
+        [new Date(2020, 2, 5), 400, 0],
+        [new Date(2020, 2, 6), 639, 0]
     ];
 
 

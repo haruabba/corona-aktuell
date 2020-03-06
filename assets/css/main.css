@@ -3344,15 +3344,20 @@ input, select, textarea {
  	padding-left: 10px;
   	padding-right: 10px;
     width: 20%;
+
+  }
+
+  @media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
+
 .col-md-3 {
     width: 25%;
     position: relative;
   	min-height: 1px;
   	padding-left: 15px;
   	padding-right: 15px;
-  	float: left;
   }
 
 .col-md-8 {
@@ -3360,7 +3365,6 @@ input, select, textarea {
   	position: relative;
   	padding-left: 15px;
   	padding-right: 15px;
-  	float: left;
   }
 
 .col-md-offset-2 {
@@ -3407,8 +3411,25 @@ input, select, textarea {
   margin-bottom: 1em;
   background: #fff;
 }
+#fh5co-counter {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#fh5co-counter{
+  padding: 1em 1em;
+  clear: both;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-counter{
+    padding: 3em 1em;
+  }
+}
+
 .fh5co-counters {
-  padding: 1em 0;
+  padding: 3em 0;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
