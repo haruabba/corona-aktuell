@@ -15,8 +15,7 @@ function drawCurveTypes() {
         vAxis: {
           title: 'Fälle'
         },
-        width: 900,
-        height: 500,
+        height: 400,
         chartArea: {left: 0, top: 0, width: "100%", height: "100%"}
       };
 
