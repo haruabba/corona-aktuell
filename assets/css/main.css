@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #132933;
+		background-color: #132933;	
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -190,7 +190,7 @@ input, select, textarea {
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 500;
+		font-weight: 300;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
 		letter-spacing: -0.025em;
@@ -207,7 +207,7 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 2.0em;
+		font-size: 1.5em;
 	}
 
 	h3 {
@@ -2642,6 +2642,7 @@ input, select, textarea {
 
 			header.major h2:after {
 				display: block;
+				content: '';
 				width: 3.25em;
 				height: 2px;
 				margin: 0.7em 0 1em 0;
@@ -3323,150 +3324,11 @@ input, select, textarea {
 				#nav + #main {
 					padding-top: 0;
 				}
+
 		}
-/* Display */
-.col-md-12 {
-	  position: relative;
-  	  min-height: 1px;
-      padding-left: 15px;
-      padding-right: 15px;
-      width: 100%;
-      float: left;
-  }
-
-.col-md-offset-1 {
-    margin-left: 15%;
-  }
-
-.col-md-2 {
-	position: relative;
-  	min-height: 1px;
- 	padding-left: 10px;
-  	padding-right: 10px;
-    width: 20%;
-
-  }
-
-  @media (min-width: 992px) {
-  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-    float: left;
-  }
-
-.col-md-3 {
-    width: 25%;
-    position: relative;
-  	min-height: 1px;
-  	padding-left: 15px;
-  	padding-right: 15px;
-  }
-
-.col-md-8 {
-	width: 66.66667%;
-  	position: relative;
-  	padding-left: 15px;
-  	padding-right: 15px;
-  }
-
-.col-md-offset-2 {
-    margin-left: 25%;
-  }
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width:100%;
-  max-height:100%;
-}
-.chart {
-  width: 80%; 
-  margin: 0 auto;
-  margin-bottom: 1em;
-  background: #fff;
-}
-
-.table-chart {
-  width: 100%; 
-  margin: 0 auto;
-  margin-bottom: 1em;
-  background: #fff;
-}
-
-.container-wrap {
-  width: 60%; 
-  margin: 0 auto;
-  margin-bottom: 1em;
-  background: #fff;
-}
-.container-wrap-round {
-  margin: -50px auto 100px auto;
-  border-radius: 1em;
-  border: 1px solid;
-  background: inherit;
-}
-.container-wrap-bound {
-  border-radius: 0px;
-  border: 1px solid;
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 1em;
-  background: #fff;
-}
-#fh5co-counter {
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-#fh5co-counter{
-  padding: 1em 1em;
-  clear: both;
-}
-@media screen and (max-width: 768px) {
-  #fh5co-counter{
-    padding: 3em 1em;
-  }
-}
-
-.fh5co-counters {
-  padding: 3em 0;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
-}
-.fh5co-counters .counter-wrap {
-  border: 1px solid red !important;
-}
-.fh5co-counters .fh5co-counter {
-  font-size: 28px;
-  display: block;
-  color: white;
-  width: 100%;
-  font-weight: 400;
-  margin-bottom: .0em;
-  font-family: "Source Sans Pro", sans-serif;
-}
-.fh5co-counters .fh5co-counter-death {
-  font-size: 30px;
-  display: block;
-  color: red;
-  width: 100%;
-  font-weight: 600;
-  margin-bottom: .0em;
-  font-family: "Source Sans Pro", sans-serif;
-}
-.fh5co-counters .fh5co-counter-label {
-  font-size: 14px;
-  margin-bottom: 2em;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 600;
-  color: gray;
-}		
 
 /* Main */
+
 	#main {
 		background-color: #ffffff;
 		color: #636363;
@@ -3899,8 +3761,7 @@ input, select, textarea {
 	#wrapper {
 		width: 64em;
 		max-width: calc(100% - 4em);
-		margin: -30px auto;
-
+		margin: 0 auto;
 	}
 
 		@media screen and (max-width: 480px) {
@@ -3918,3 +3779,146 @@ input, select, textarea {
 			}
 
 		}
+
+
+/* Display */
+.col-md-12 {
+	  position: relative;
+  	  min-height: 1px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 100%;
+      float: left;
+  }
+
+.col-md-offset-1 {
+    margin-left: 15%;
+  }
+
+.col-md-2 {
+	position: relative;
+  	min-height: 1px;
+ 	padding-left: 10px;
+  	padding-right: 10px;
+    width: 20%;
+
+  }
+
+  @media (min-width: 992px) {
+  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+
+.col-md-3 {
+    width: 25%;
+    position: relative;
+  	min-height: 1px;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  }
+
+.col-md-8 {
+	width: 66.66667%;
+  	position: relative;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  }
+
+.col-md-offset-2 {
+    margin-left: 25%;
+  }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width:100%;
+  max-height:100%;
+}
+.chart {
+  width: 80%; 
+  margin: 0 auto;
+  margin-bottom: 1em;
+  background: #fff;
+}
+
+.table-chart {
+  width: 100%; 
+  margin: 0 auto;
+  margin-bottom: 1em;
+  background: #fff;
+}
+
+.container-wrap {
+  width: 60%; 
+  margin: 0 auto;
+  margin-bottom: 1em;
+  background: #fff;
+}
+.container-wrap-round {
+  margin: -50px auto 100px auto;
+  border-radius: 1em;
+  border: 1px solid;
+  background: inherit;
+}
+.container-wrap-bound {
+  border-radius: 0px;
+  border: 1px solid;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  background: #fff;
+}
+#fh5co-counter {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+#fh5co-counter{
+  padding: 1em 1em;
+  clear: both;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-counter{
+    padding: 3em 1em;
+  }
+}
+
+.fh5co-counters {
+  padding: 3em 0;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}
+.fh5co-counters .counter-wrap {
+  border: 1px solid red !important;
+}
+.fh5co-counters .fh5co-counter {
+  font-size: 28px;
+  display: block;
+  color: white;
+  width: 100%;
+  font-weight: 400;
+  margin-bottom: .0em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.fh5co-counters .fh5co-counter-death {
+  font-size: 30px;
+  display: block;
+  color: red;
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: .0em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.fh5co-counters .fh5co-counter-label {
+  font-size: 14px;
+  margin-bottom: 2em;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  color: gray;
+}		
