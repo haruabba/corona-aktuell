@@ -190,7 +190,7 @@ input, select, textarea {
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
 		letter-spacing: -0.025em;
@@ -207,6 +207,7 @@ input, select, textarea {
 	}
 
 	h2 {
+		font-weight: 500;
 		font-size: 1.5em;
 	}
 
@@ -3834,6 +3835,11 @@ input, select, textarea {
   max-width:100%;
   max-height:100%;
 }
+.notice {
+  width: 100%; 
+  margin: 0 auto;
+  text-align: center;
+}
 .chart {
   width: 80%; 
   margin: 0 auto;
@@ -3849,25 +3855,19 @@ input, select, textarea {
 }
 
 .container-wrap {
-  width: 60%; 
+  width: 65%; 
   margin: 0 auto;
   margin-bottom: 1em;
   background: #fff;
 }
 .container-wrap-round {
-  margin: -50px auto 100px auto;
+  margin: -50px auto 20px auto;
   border-radius: 1em;
-  border: 1px solid;
+  border: 2px solid;
+  width: 100%;
   background: inherit;
 }
-.container-wrap-bound {
-  border-radius: 0px;
-  border: 1px solid;
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 1em;
-  background: #fff;
-}
+
 #fh5co-counter {
   background-size: cover;
   background-position: top center;
