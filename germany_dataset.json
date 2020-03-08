@@ -7,8 +7,8 @@
  	], 
  	"rows": 
  	[
- 		{"c": [{"v": "DE-BW", "f": "Baden-Württemberg"}, {"v": 15}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-BY", "f": "Bayern"}, {"v": 19}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-BW", "f": "Baden-Württemberg"}, {"v": 182}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-BY", "f": "Bayern"}, {"v": 148}, {"v": 0}]}, 
  		{"c": [{"v": "DE-BE", "f": "Berlin"}, {"v": 28}, {"v": 0}]}, 
  		{"c": [{"v": "DE-BB", "f": "Brandenburg"}, {"v": 2}, {"v": 0}]}, 
  		{"c": [{"v": "DE-HB", "f": "Bremen"}, {"v": 4}, {"v": 0}]}, 
