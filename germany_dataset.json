@@ -7,16 +7,21 @@
  	], 
  	"rows": 
  	[
- 		{"c": [{"v": "DE-BW", "f": "Baden-Württemberg"}, {"v": 15}, {"v": 15}]}, 
- 		{"c": [{"v": "DE-BY", "f": "Bayern"}, {"v": 19}, {"v": 19}]}, 
- 		{"c": [{"v": "DE-HB", "f": "Bremen"}, {"v": 1}, {"v": 1}]}, 
- 		{"c": [{"v": "DE-HE", "f": "Hamburg"}, {"v": 1}, {"v": 1}]}, 
- 		{"c": [{"v": "DE-MV", "f": "Hessen"}, {"v": 8}, {"v": 8}]}, 
- 		{"c": [{"v": "DE-NW", "f": "Niedersachsen"}, {"v": 1}, {"v": 1}]}, 
- 		{"c": [{"v": "DE-RP", "f": "Nordrhein-Westfalen"}, {"v": 66}, {"v": 66}]}, 
- 		{"c": [{"v": "DE-SL", "f": "Rheinland-Pfalz"}, {"v": 2}, {"v": 2}]}, 
- 		{"c": [{"v": "DE-SL", "f": "Saarland"}, {"v": 4}, {"v": 2}]}, 
- 		{"c": [{"v": "DE-SH", "f": "Schleswig Holstein"}, {"v": 2}, {"v": 2}]}, 
- 		{"c": [{"v": "DE-TH", "f": "Thüringen"}, {"v": 2}, {"v": 2}]}
+ 		{"c": [{"v": "DE-BW", "f": "Baden-Württemberg"}, {"v": 15}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-BY", "f": "Bayern"}, {"v": 19}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-BE", "f": "Berlin"}, {"v": 28}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-BB", "f": "Brandenburg"}, {"v": 2}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-HB", "f": "Bremen"}, {"v": 4}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-HH", "f": "Hamburg"}, {"v": 13}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-HE", "f": "Hessen"}, {"v": 17}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-MV", "f": "Mecklenburg-Vorpommern"}, {"v": 7}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-NI", "f": "Niedersachsen"}, {"v": 21}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-NW", "f": "Nordrhein-Westfalen"}, {"v": 392}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-RP", "f": "Rheinland-Pfalz"}, {"v": 15}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-SL", "f": "Saarland"}, {"v": 4}, {"v": 0}]}, 
+		{"c": [{"v": "DE-SN", "f": "Sachsen"}, {"v": 4}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-ST", "f": "Sachsen-Anhalt"}, {"v": 0}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-SH", "f": "Schleswig Holstein"}, {"v": 8}, {"v": 0}]}, 
+ 		{"c": [{"v": "DE-TH", "f": "Thüringen"}, {"v": 2}, {"v": 0}]}
  	]
  }

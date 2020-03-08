@@ -13,8 +13,8 @@ function drawMarkersMap() {
   }).responseText;
 
   var worldMap = google.visualization.arrayToDataTable(worldDataSet);
-  //var germanyMap = new google.visualization.DataTable(jsonData);
-  var germanyMap = new google.visualization.arrayToDataTable(germanyDataSet);
+  var germanyMap = new google.visualization.DataTable(jsonData);
+  //var germanyMap = new google.visualization.arrayToDataTable(germanyDataSet);
 
    var worldOptions = {
     colorAxis: {minValue: 0, maxValue: 1000, colors: ['#FFE4E1', '#A52A2A']},
