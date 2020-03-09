@@ -105,6 +105,25 @@ const worldDataSet = [
     [{v: 'BD', f: 'Bangladesch'}, 3, 0],
   ];
   
+    const germanyDataSet = [
+    ['Bundesland', 'Bestätiger', 'Tod'],
+    [{v: 'DE-BW', f: 'Baden-Württemberg'}, 199, 0],
+    [{v: 'DE-BY', f: 'Bayern'}, 256, 0],
+    [{v: 'DE-BE', f: 'Berlin'}, 40, 0],
+    [{v: 'DE-BB', f: 'Brandenburg'}, 6, 0],
+    [{v: 'DE-HB', f: 'Bremen'}, 4, 0], 
+    [{v: 'DE-HH', f: 'Hamburg'}, 17 , 0],
+    [{v: 'DE-HE', f: 'Hessen'}, 20, 0],
+    [{v: 'DE-MV', f: 'Mecklenburg-Vorpommern'}, 8, 0],
+    [{v: 'DE-NI', f: 'Niedersachsen'}, 33, 0],
+    [{v: 'DE-NW', f: 'Nordrhein-Westfalen'}, 484, 0],
+    [{v: 'DE-RP', f: 'Rheinland-Pfalz'}, 19, 0],
+    [{v: 'DE-SL', f: 'Saarland'}, 5, 0],
+    [{v: 'DE-SN', f: 'Sachsen'}, 10, 0],
+    [{v: 'DE-ST', f: 'Sachsen-Anhalt'}, 0, 0],
+    [{v: 'DE-SH', f: 'Schleswig-Holstein'}, 9, 0],
+    [{v: 'DE-TH', f: 'Thüringen'}, 2, 0]
+  ];
 
     const germanyDataSetProDay = [
         ['X', 'Bestätiger', 'Tod'],
