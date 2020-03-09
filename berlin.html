@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Berlin - Corona 19 (COVID-19) Echtzeit-Statusanzeige</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="keywords" content="Corona 19, Corona, COVID-19, Virus, Echtzeit-Statusanzeige" />
+		<meta name="author" content="Junghwa Park" />
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>   
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/berlin_logo.svg" alt="" /></span>
+					</header>
+					<br><br>
+
+					<!-- Display -->
+						<div class="container-wrap-round">
+							<div align="right" style="margin-right: 10px">
+								<a href="javascript:window.location.href=window.location.href">Letztes Update: 08.03.2020 20:00 CET</a>
+							</div>
+														<div id="fh5co-counter" class="fh5co-counters">
+								<div align="center">
+									<h2>Deutschland</h2>
+								</div>		
+								<div class="row animate-box">
+									<div class="col-md-8 col-md-offset-2">			
+										<div class="row">
+											<div class="col-md-3 text-center">
+												<span class="fh5co-counter js-counter" data-from="0" data-to="902" data-speed="1000" data-refresh-interval="50"></span>
+												<span class="fh5co-counter-label">
+													<font color="red">(+107)</font><br>
+													<font color="grey">Bestätiger</font>
+												</span>
+											</div>
+											<div class="col-md-3 text-center">
+												<span class="fh5co-counter-death js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="50"></span>
+												<span class="fh5co-counter-label">
+													<font color="red">(-)</font><br>
+													<font color="grey">Tod</font>
+												</span>
+											</div>
+											<div class="col-md-3 text-center">
+												<span class="fh5co-counter js-counter" data-from="0" data-to="18" data-speed="1000" data-refresh-interval="50"></span>
+												<span class="fh5co-counter-label">
+													<font color="green">(-)</font><br>
+													<font color="grey">Geheilt</font>
+												</span>
+											</div>
+											<div class="col-md-3 text-center">
+												<font class="fh5co-counter">0%</font>
+												<span class="fh5co-counter-label">
+													<font color="red"></font><br>
+													<font color="grey">Tödlichkeit</font>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="fh5co-counter" class="fh5co-counters">
+								<div align="center">
+									<h2>Berlin</h2>
+								</div>		
+								<div class="row animate-box">
+									<div class="col-md-8 col-md-offset-2">			
+										<div class="row">
+											<div class="col-md-3 text-center">
+												<span class="fh5co-counter js-counter" data-from="0" data-to="40" data-speed="1000" data-refresh-interval="50"></span>
+												<span class="fh5co-counter-label">
+													<font color="red">(+12)</font><br>
+													<font color="grey">Bestätiger</font>
+												</span>
+											</div>
+											<div class="col-md-3 text-center">
+												<span class="fh5co-counter-death js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="50"></span>
+												<span class="fh5co-counter-label">
+													<font color="red">(-)</font><br>
+													<font color="grey">Tod</font>
+												</span>
+											</div>
+											<div class="col-md-3 text-center">
+												<span class="fh5co-counter js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="50"></span>
+												<span class="fh5co-counter-label">
+													<font color="green">(-)</font><br>
+													<font color="grey">Geheilt</font>
+												</span>
+											</div>
+											<div class="col-md-3 text-center">
+												<font class="fh5co-counter">0%</font>
+												<span class="fh5co-counter-label">
+													<font color="red"></font><br>
+													<font color="grey">Tödlichkeit</font>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END container-wrap -->
+
+						<div class="notice">
+							<h3>[Hinweis]</h3>
+							<p>
+								Die Echtzeit-Statusanzeige ist nur im Internet verfügbar.<br>
+								Mobile Ansicht ist in der Bearbeitung.
+							</p>
+						</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#barchart" class="active">Barchart</a></li>
+							<li><a href="#linechart">Linechart</a></li>
+							<li><a href="#">Übersicht</a></li>
+							<li><a href="#">Nachrichten</a></li>
+							<li><a href="#dataquelle">Datenquelle</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+						<!-- Barchart -->
+						<section id="barchart" class="main special">
+							<header class="spotlight">
+								<h2>Bezirke von Fällen</h2>
+							</header>
+							<div class="chart">
+								<div id="berlin_div"></div>
+									<p align="right">Quelle: <a href="https://www.tagesspiegel.de/berlin/coronavirus-in-der-hauptstadt-an-diesen-sechs-orten-koennen-sich-berliner-bald-testen-lassen/25605226.html">Der Tagesspiegel</a></p>
+							</div>
+						</section>
+
+						<!-- Datendiagramme -->
+						<section id="linechart" class="main special">
+							<header class="spotlight">
+									<h2>Fälle nach Datum</h2>
+							</header>
+							<div class="chart">
+								<div id="linechart_material_berlin"></div>
+								<p align="right">Quelle: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO Novel Coronavirus (2019-nCoV) situation reports</a></p>
+							</div>
+						</section>
+
+
+						<!-- Datendiagramme -->
+						<section id="übersicht" class="main special">
+							<header class="spotlight">
+									<h2>Übersicht</h2>
+							</header>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th>Bezirk</th>
+											<th>Aktueller Standort</th>
+											<th>Geschlecht</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Mitte</td>
+											<td>Charité Campus Virchow Klinikum</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Marzahn-Hellersdorf</td>
+											<td>Vivantes-Klinikum Neukölln</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Mitte</td>
+											<td>Charité Campus Virchow Klinikum</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Tempelhof-Schöneberg</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Neukölln</td>
+											<td>Vivantes-Klinikum Neukölln</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Mitte</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Friedrichshain-Kreuzberg</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Friedrichshain-Kreuzberg</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Pankow</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Friedrichshain-Kreuzberg</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Friedrichshain-Kreuzberg</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Reinickendorf</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Pankow</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Pankow</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Tempelhof-Schöneberg</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Charlottenburg-Wilmersdorf</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Charlottenburg-Wilmersdorf</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Reinickendorf</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Reinickendorf</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Pankow</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Tempelhof-Schöneberg</td>
+											<td>Zuhause</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Mitte</td>
+											<td>-</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Mitte</td>
+											<td>-</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Mitte</td>
+											<td>-</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Charlottenburg-Wilmersdorf</td>
+											<td>-</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Neukölln</td>
+											<td>-</td>
+											<td>Mann</td>
+										</tr>
+										<tr>
+											<td>Mitte</td>
+											<td>-</td>
+											<td>Frau</td>
+										</tr>
+										<tr>
+											<td>Tempelhof-Schöneberg</td>
+											<td>Zuhause</td>
+											<td>Mann</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="2"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+
+						</section>
+
+						<!-- Dataquelle -->
+						<section id="dataquelle" class="main special">
+							<header class="major">
+								<h2>Datenquelle</h2>
+								<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/" target="_blank">WHO Novel Coronavirus (2019-nCoV) situation reports</a> <br>
+								<a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html" target="_blank">Robert Koch-Instituts</a> <br>
+								<a href="https://www.bundesgesundheitsministerium.de/coronavirus.html" target="_blank">Federal Ministry of Health</a> <br>
+								<a href="https://www.tagesspiegel.de/berlin/coronavirus-in-der-hauptstadt-an-diesen-sechs-orten-koennen-sich-berliner-bald-testen-lassen/25605226.html">Der Tagesspiegel</a>
+							</header>
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Motivation</h2>
+							<p>The cases of COVID-19 in South Korea is rapidly increasing and the informations are exploding. But because of many services like this, Korean could get information much faster and efficiently to prepare themselves against the virus. This kind of websites will help the other countries as well, if the virus won't stop spreading.</p>
+							<ul class="actions">
+								<li><a href="https://github.com/haruabba/corona-aktuell" target="_blank" class="button">GitHub</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Contact</h2>
+							<dl class="alt">
+								<dt>name</dt>
+								<dd><a href="mailto:junghwa.park@student.uni-halle.de">Junghwa Park</a></dd>
+								<dt>a.k.a</dt>
+								<dd>Haruabba</dd>
+								<dt>from</dt>
+								<dd>Korea</dd>
+								<dt>study</dt>
+								<dd>Informatik at MLU</dd>
+							</dl>
+						</section>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min1.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main1.js"></script>
+			<script src="assets/js/main2.js"></script>
+			<script src="assets/js/jquery.countTo.js"></script>
+			<script src="assets/js/jquery.min2.js"></script>
+			<script src="assets/js/jquery.waypoints.min.js"></script>
+			<script src="assets/js/jquery.flexslider-min.js"></script>
+			<script src="assets/js/jquery.countTo.js"></script>
+			<!-- Google Charts -->
+			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    		<script src="assets/google/google_geochart.js"></script>
+    		<script src="assets/google/google_tablechart.js"></script>
+			<script src="assets/google/google_barchart_berlin.js"></script>
+			<script src="assets/google/google_linechart_berlin.js"></script>
+		    <script src="assets/google/datasets.js"></script>
+		    <script src="assets/google/dataset_berlin.js"></script>
+	</body>
+</html>

@@ -2,12 +2,12 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawCurveTypes);
 
 function drawCurveTypes() {
-      var data = new google.visualization.arrayToDataTable(germanyDataSetProDay);
+      var berlinData = new google.visualization.arrayToDataTable(berlinDataSetProDay);
 
-      var optionsGermany = {
+      var optionsBerlin = {
         chart: {
           title: 'Zeitraum',
-          subtitle: '28.01.2020 - 08.03.2020'
+          subtitle: '02.03.2020 - 08.03.2020'
         },
         hAxis: {
           title: 'Datum'
@@ -18,8 +18,7 @@ function drawCurveTypes() {
         height: 400,
         chartArea: {left: 0, top: 0, width: "100%", height: "100%"}
       };
-
-
-      var chartGermany = new google.charts.Line(document.getElementById('linechart_material'));
-      chartGermany.draw(data, google.charts.Line.convertOptions(optionsGermany));
+      
+      var chartBerlin = new google.charts.Line(document.getElementById('linechart_material_berlin'));
+      chartBerlin.draw(berlinData, google.charts.Line.convertOptions(optionsBerlin));
 }
