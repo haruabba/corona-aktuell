@@ -7,7 +7,7 @@ function drawCurveTypes() {
       var optionsGermany = {
         chart: {
           title: 'Zeitraum',
-          subtitle: '28.01.2020 - 08.03.2020'
+          subtitle: '28.01.2020 - 09.03.2020'
         },
         hAxis: {
           title: 'Datum'
