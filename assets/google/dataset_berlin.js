@@ -11,16 +11,16 @@
 
   const berlinBezirk = [
     ['Bezirk', 'Bestätiger', 'Tod'],
-    ['Charlottenburg-Wilmersdorf', 9, 0],
-    ['Friedrichshain-Kreuzberg', 5, 0],
-    ['Lichtenberg', 0, 0],
-    ['Marzahn-Hellersdorf', 1, 0],
-    ['Mitte', 8, 0], 
-    ['Neukölln', 1, 0],
-    ['Pankow', 5, 0],
-    ['Reinickendorf', 3, 0],
-    ['Spandau', 0, 0],
-    ['Steglitz-Zehlendorf', 2, 0],
-    ['Tempelhof-Schöneberg', 5, 0],
-    ['Treptow-Köpenick', 0, 0]
+    [{v: 'Wilmersdorf', f: 'Charlottenburg-Wilmersdorf'}, 9, 0],
+    [{v: 'Friedrichshain', f: 'Friedrichshain-Kreuzberg'}, 5, 0],
+    [{v: 'Lichtenberg', f: 'Lichtenberg'}, 0, 0],
+    [{v: 'Marzahn', f: 'Marzahn-Hellersdorf'}, 1, 0],
+    [{v: 'Mitte', f: 'Mitte'}, 8, 0], 
+    [{v: 'Neukölln', f: 'Neukölln'}, 1, 0],
+    [{v: 'Pankow', f: 'Pankow'}, 5, 0],
+    [{v: 'Reinickendorf', f: 'Reinickendorf'}, 3, 0],
+    [{v: 'Spandau', f: 'Spandau'}, 0, 0],
+    [{v: 'Steglitz', f: 'Steglitz-Zehlendorf'}, 2, 0],
+    [{v: 'Tempelhof', f: 'Tempelhof-Schöneberg'}, 5, 0],
+    [{v: 'Treptow', f: 'Treptow-Köpenick'}, 0, 0]
   ];

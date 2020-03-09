@@ -104,26 +104,6 @@ const worldDataSet = [
     [{v: 'PY', f: 'Paraguay'}, 1, 0],
     [{v: 'BD', f: 'Bangladesch'}, 3, 0],
   ];
-
-  const germanyDataSet = [
-    ['Bundesland', 'Bestätiger', 'Tod'],
-    [{v: 'DE-BW', f: 'Baden-Württemberg'}, 182, 0],
-    [{v: 'DE-BY', f: 'Bayern'}, 148, 0],
-    [{v: 'DE-BE', f: 'Berlin'}, 28, 0],
-    [{v: 'DE-BB', f: 'Brandenburg'}, 2, 0],
-    [{v: 'DE-HB', f: 'Bremen'}, 4, 0], 
-    [{v: 'DE-HH', f: 'Hamburg'}, 13, 0],
-    [{v: 'DE-HE', f: 'Hessen'}, 17, 0],
-    [{v: 'DE-MV', f: 'Mecklenburg-Vorpommern'}, 7, 0],
-    [{v: 'DE-NI', f: 'Niedersachsen'}, 21, 0],
-    [{v: 'DE-NW', f: 'Nordrhein-Westfalen'}, 392, 0],
-    [{v: 'DE-RP', f: 'Rheinland-Pfalz'}, 15, 0],
-    [{v: 'DE-SL', f: 'Saarland'}, 4, 0],
-    [{v: 'DE-SN', f: 'Sachsen'}, 4, 0],
-    [{v: 'DE-ST', f: 'Sachsen-Anhalt'}, 0, 0],
-    [{v: 'DE-SH', f: 'Schleswig-Holstein'}, 8, 0],
-    [{v: 'DE-TH', f: 'Thüringen'}, 2, 0]
-  ];
   
 
     const germanyDataSetProDay = [
@@ -168,5 +148,5 @@ const worldDataSet = [
         [new Date(2020, 2, 5), 400, 0],
         [new Date(2020, 2, 6), 639, 0],
         [new Date(2020, 2, 7), 795, 0],
-        [new Date(2020, 2, 8), 847, 0],
+        [new Date(2020, 2, 8), 902, 0],
     ];

@@ -10,9 +10,9 @@
 
   const sachsenStadt = [
     ['Stadt', 'Bestätiger', 'Tod'],
-    ['Leipzig', 2, 0],
-    ['Dresden', 2, 0],
-    ['Landkreis Bautzen', 4, 0],
-    ['Großpönsa', 1, 0],
-    ['Dippoldiswalde', 1, 0]
+    [{v: 'Leipzig', f: 'Leipzig'}, 2, 0],
+    [{v: 'Dresden', f: 'Dresden'}, 2, 0],
+    [{v: 'Bautzen', f: 'Landkreis Bautzen'}, 4, 0],
+    [{v: 'Großpönsa', f: 'Großpönsa'}, 1, 0],
+    [{v: 'Dippoldiswalde', f: 'Dippoldiswalde'}, 1, 0]
   ];
