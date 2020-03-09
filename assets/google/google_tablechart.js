@@ -9,7 +9,7 @@ function drawTable() {
     async: false,
   }).responseText;
 
-  var worldData = google.visualization.arrayToDataTable(worldDataSet);
+  var worldData = google.visualization.arrayToDataTable(worldDataSetTable);
   var germanyData = new google.visualization.DataTable(jsonData);
 
   var worldTable = new google.visualization.Table(document.getElementById('worldTable_div'));
