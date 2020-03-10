@@ -2,12 +2,12 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawCurveTypes);
 
 function drawCurveTypes() {
-      var berlinData = new google.visualization.arrayToDataTable(berlinDataSetProDay);
+      var data = new google.visualization.arrayToDataTable(sachsenanhaltDataSetProDay);
 
       var optionsBerlin = {
         chart: {
           title: 'Zeitraum',
-          subtitle: '02.03.2020 - 10.03.2020'
+          subtitle: '09.03.2020 - 10.03.2020'
         },
         hAxis: {
           title: 'Datum'
@@ -19,6 +19,6 @@ function drawCurveTypes() {
         chartArea: {left: 0, top: 0, width: "100%", height: "100%"}
       };
       
-      var chartBerlin = new google.charts.Line(document.getElementById('linechart_material_berlin'));
-      chartBerlin.draw(berlinData, google.charts.Line.convertOptions(optionsBerlin));
+      var chartSachsen = new google.charts.Line(document.getElementById('linechart_material_sachsen-anhalt'));
+      chartSachsen.draw(data, google.charts.Line.convertOptions(optionsBerlin));
 }

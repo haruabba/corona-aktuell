@@ -1,5 +1,6 @@
     const berlinDataSetProDay = [
         ['X', 'Bestätiger', 'Tod'],
+        [new Date(2020, 2, 1), 0, 0],
         [new Date(2020, 2, 2), 1, 0],
         [new Date(2020, 2, 3), 6, 0],    
         [new Date(2020, 2, 4), 9, 0],   
@@ -8,6 +9,7 @@
         [new Date(2020, 2, 7), 28, 0],
         [new Date(2020, 2, 8), 40, 0],
         [new Date(2020, 2, 9), 48, 0],
+        [new Date(2020, 2, 10), 48, 0],
     ];
 
   const berlinBezirk = [

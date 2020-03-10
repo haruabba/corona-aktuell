@@ -7,7 +7,7 @@ function drawCurveTypes() {
       var optionsBerlin = {
         chart: {
           title: 'Zeitraum',
-          subtitle: '03.03.2020 - 08.03.2020'
+          subtitle: '03.03.2020 - 10.03.2020'
         },
         hAxis: {
           title: 'Datum'

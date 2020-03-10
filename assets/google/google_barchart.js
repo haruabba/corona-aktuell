@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawStuff);
     var options = {
         chart: {
             title: 'Status',
-            subtitle: 'Insgesamt 1139 wurden infiziert (Quelle: Robert Koch-Instituts)'
+            subtitle: 'Insgesamt 1300 wurden infiziert (Quelle: Robert Koch-Instituts)'
           },
         height: 400,
         chartArea: {left: 0, top: 0, width: "100%", height: "100%"},
