@@ -3812,15 +3812,16 @@ input, select, textarea {
     width: 25%;
     position: relative;
   	min-height: 1px;
-  	padding-left: 15px;
-  	padding-right: 15px;
+  	padding-left: 0px;
+  	padding-right: 70px;
   }
 
 .col-md-8 {
-	width: 66.66667%;
+	width: 100%;
+	min-height: 1px;
   	position: relative;
-  	padding-left: 15px;
-  	padding-right: 15px;
+  	padding-left: 50px;
+  	padding-right: 200px;
   }
 
 .col-md-offset-2 {
@@ -3859,7 +3860,7 @@ input, select, textarea {
   background: #fff;
 }
 .container-wrap-round {
-  margin: -50px auto 20px auto;
+  margin: -60px auto 20px auto;
   border-radius: 1em;
   border: 2px solid;
   width: 100%;
@@ -3879,12 +3880,12 @@ input, select, textarea {
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter{
-    padding: 3em 1em;
+    padding: 1em 6em;
   }
 }
 
 .fh5co-counters {
-  padding: 3em 0;
+  padding: 1em 0;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
