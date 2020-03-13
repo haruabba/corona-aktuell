@@ -100,15 +100,15 @@ public class RKI {
             if(tds.get(0).text().equals("Gesamt")) break;
             String bundesland = tds.get(0).text();
             String confirmedCount = tds.get(1).text().split(" ")[0];
-            String deathCount = SetDeathCount(confirmedCount);
+            String deathCount = SetDeathCount(tds.get(1).text());
             array.add(SetGoogleFormatJsonRowObject(new JSONObject(), bundesland, confirmedCount, deathCount));
         }
 		return array;
 	}
 	
-	private static String SetDeathCount(String confirmedCount) {
-        if(confirmedCount.split(" ").length == 2) 
-        	return confirmedCount.replace("(", "").replace(")", "");
+	private static String SetDeathCount(String value) {
+        if(value.split(" ").length == 2) 
+        	return value.split(" ")[1].replace("(", "").replace(")", "");
         return "0";
 	}
 	
