@@ -1,27 +1,27 @@
- {
- 	"cols": 
- 	[
- 		{"id": "", "label": "Bundesland", "pattern": "", "type": "string"}, 
- 		{"id": "", "label": "Bestätiger", "pattern": "", "type": "number"}, 
- 		{"id": "", "label": "Tod", "pattern": "", "type": "number"}
- 	], 
- 	"rows": 
- 	[
- 		{"c": [{"v": "DE-BW", "f": "Baden-Württemberg"}, {"v": 237}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-BY", "f": "Bayern"}, {"v": 314}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-BE", "f": "Berlin"}, {"v": 48}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-BB", "f": "Brandenburg"}, {"v": 9}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-HB", "f": "Bremen"}, {"v": 4}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-HH", "f": "Hamburg"}, {"v": 29}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-HE", "f": "Hessen"}, {"v": 35}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-MV", "f": "Mecklenburg-Vorpommern"}, {"v": 13}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-NI", "f": "Niedersachsen"}, {"v": 49}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-NW", "f": "Nordrhein-Westfalen"}, {"v": 484}, {"v": 2}]}, 
- 		{"c": [{"v": "DE-RP", "f": "Rheinland-Pfalz"}, {"v": 25}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-SL", "f": "Saarland"}, {"v": 7}, {"v": 0}]}, 
-		{"c": [{"v": "DE-SN", "f": "Sachsen"}, {"v": 24}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-ST", "f": "Sachsen-Anhalt"}, {"v": 9}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-SH", "f": "Schleswig Holstein"}, {"v": 9}, {"v": 0}]}, 
- 		{"c": [{"v": "DE-TH", "f": "Thüringen"}, {"v": 4}, {"v": 0}]}
- 	]
- }
+{
+	"rows":
+	[
+		{"c":[{"v":"DE-BW","f":"Baden-Württemberg"},{"v":"454"},{"v":"331"}]},
+		{"c":[{"v":"DE-BY","f":"Bayern"},{"v":"500"},{"v":"317"}]},
+		{"c":[{"v":"DE-BE","f":"Berlin"},{"v":"137"},{"v":"137"}]},
+		{"c":[{"v":"DE-BB","f":"Brandenburg"},{"v":"30"},{"v":"23"}]},
+		{"c":[{"v":"DE-HB","f":"Bremen"},{"v":"38"},{"v":"35"}]},
+		{"c":[{"v":"DE-HH","f":"Hamburg"},{"v":"88"},{"v":"60"}]},
+		{"c":[{"v":"DE-HE","f":"Hessen"},{"v":"99"},{"v":"59"}]},
+		{"c":[{"v":"DE-MV","f":"Mecklenburg-Vorpommern"},{"v":"23"},{"v":"16"}]},
+		{"c":[{"v":"DE-NI","f":"Niedersachsen"},{"v":"129"},{"v":"81"}]},
+		{"c":[{"v":"DE-NW","f":"Nordrhein-Westfalen"},{"v":"688"},{"v":"688"}]},
+		{"c":[{"v":"DE-RP","f":"Rheinland-Pfalz"},{"v":"52"},{"v":"52"}]},
+		{"c":[{"v":"DE-SL","f":"Saarland"},{"v":"14"},{"v":"8"}]},
+		{"c":[{"v":"DE-SN","f":"Sachsen"},{"v":"45"},{"v":"30"}]},
+		{"c":[{"v":"DE-ST","f":"Sachsen-Anhalt"},{"v":"27"},{"v":"14"}]},
+		{"c":[{"v":"DE-SH","f":"Schleswig-Holstein"},{"v":"31"},{"v":"29"}]},
+		{"c":[{"v":"DE-TH","f":"Thüringen"},{"v":"14"},{"v":"12"}]}
+	],
+	"cols":
+	[
+		{"pattern":"","id":"","label":"Bundesland","type":"string"},
+		{"pattern":"","id":"","label":"Bestätiger","type":"number"},
+		{"pattern":"","id":"","label":"Tod","type":"number"}
+	]
+}
