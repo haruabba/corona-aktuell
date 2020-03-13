@@ -130,6 +130,6 @@ public class RKI {
 	}
 	
 	private static String ConfigureUmlaute(String value) {
-		return value.replace("ü", "ue").replace("ö", "oe").replace("ä", "ae");
+		return value.replace("ü", "&uuml").replace("ö", "&ouml").replace("ä", "&auml").replace("ß", "&szlig");
 	}
 }

@@ -19,6 +19,7 @@ public class CoronaDriver {
 		//final String SACHSENANHALT = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
 		RKI.ParsingTable(ROBERTKOCHINSTITUT);
 		UpdateDatetime(HTMLFILE);
+		System.out.println("Done");
     }
 	
 	private static void UpdateDatetime(String url) {
