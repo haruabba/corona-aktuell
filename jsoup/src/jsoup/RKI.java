@@ -73,7 +73,7 @@ public class RKI {
 	@SuppressWarnings("unchecked")
 	private static JSONArray SetGoogleFormatJsonColumnArray(JSONArray array) {
         JSONObject bundesland = SetGoogleFormatJsonColumnObject(new JSONObject(), "Bundesland", "string");
-        JSONObject bestätiger = SetGoogleFormatJsonColumnObject(new JSONObject(), "Bestätiger", "number");
+        JSONObject bestätiger = SetGoogleFormatJsonColumnObject(new JSONObject(), "Bestaetiger", "number");
         JSONObject tod = SetGoogleFormatJsonColumnObject(new JSONObject(), "Tod", "number");
         array.add(bundesland);
         array.add(bestätiger);
@@ -100,11 +100,10 @@ public class RKI {
             Elements tds = row.select("td");
             if(tds.get(0).text().equals("Gesamt")) break;
             JSONObject rowObject = SetGoogleFormatJsonRowObject(
-										new JSONObject(), 
-										tds.get(0).text(), 
-										tds.get(1).text().split(" ")[0], 
-										tds.get(2).text().split(" ")[0]
-										);
+            		new JSONObject(), 
+            		tds.get(0).text(), 
+            		tds.get(1).text().split(" ")[0], 
+            		tds.get(2).text().split(" ")[0]);  
             array.add(rowObject);
             /*
             System.out.print("Bundesland: " + tds.get(0).text()); 
