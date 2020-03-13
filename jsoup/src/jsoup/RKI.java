@@ -61,10 +61,8 @@ public class RKI {
          
         //Write JSON file
         try (FileWriter file = new FileWriter("../germany_dataset.json")) {
- 
             file.write(obj.toJSONString());
             file.flush();
- 
         } catch (IOException e) {
             e.printStackTrace();
         }

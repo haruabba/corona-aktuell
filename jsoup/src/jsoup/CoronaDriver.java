@@ -26,7 +26,7 @@ public class CoronaDriver {
 		DateTimeFormatter datetime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");  
 		LocalDateTime now = LocalDateTime.now();  
 		File in = new File(url);
-		try {
+		try {	
 			Document doc = Jsoup.parse(in, null);
 		    //a with href
 		    Element link = doc.select("a").first(); 

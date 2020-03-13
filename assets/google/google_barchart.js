@@ -2,7 +2,13 @@ google.charts.load('current', {'packages':['bar']});
 google.charts.setOnLoadCallback(drawStuff);
 
   function drawStuff() {
-    var germanyData = new google.visualization.arrayToDataTable(germanyDataSet);
+    var jsonData = $.ajax({
+      url: "https://raw.githubusercontent.com/haruabba/corona-aktuell/master/germany_dataset.json",
+      dataType: "json",
+      async: false,
+    }).responseText;
+
+    var germanyData = new google.visualization.DataTable(jsonData);
 
     var options = {
         chart: {
