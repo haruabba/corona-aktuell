@@ -117,7 +117,7 @@ public class RKI {
         JSONArray jsonArray = new JSONArray();
         JSONObject bundeslandObj = new JSONObject();
         bundeslandObj.put("v", germanyHashMap.get(bundesland));
-        bundeslandObj.put("f", bundesland);
+        bundeslandObj.put("f", ConfigureUmlaute(bundesland));
         JSONObject confirmedCountObj = new JSONObject();
         confirmedCountObj.put("v", confirmedCount);
         JSONObject deathCountObj = new JSONObject();
@@ -127,5 +127,9 @@ public class RKI {
         jsonArray.add(confirmedCountObj);
         jsonArray.add(deathCountObj);
 		return jsonObject;
+	}
+	
+	private static String ConfigureUmlaute(String value) {
+		return value.replace("ü", "ue").replace("ö", "oe").replace("ä", "ae");
 	}
 }
