@@ -90,29 +90,26 @@ public class RKI {
 		return obj;
 	}
 	
-	
 	@SuppressWarnings("unchecked")
-	private static JSONArray SetGoogleFormatJsonRowArray(JSONArray array, Iterator<Element> iterator){
+	private static JSONArray SetGoogleFormatJsonRowArray(JSONArray array, Iterator<Element> iterator) {
         //remove header row
         iterator.next();
         while (iterator.hasNext()) {
         	Element row = iterator.next();
             Elements tds = row.select("td");
             if(tds.get(0).text().equals("Gesamt")) break;
-            JSONObject rowObject = SetGoogleFormatJsonRowObject(
-            		new JSONObject(), 
-            		tds.get(0).text(), 
-            		tds.get(1).text().split(" ")[0], 
-            		tds.get(2).text().split(" ")[0]);  
-            array.add(rowObject);
-            /*
-            System.out.print("Bundesland: " + tds.get(0).text()); 
-            System.out.print(", Bestätiger: " + tds.get(1).text().split(" ")[0]); 
-            System.out.print(", Tod: " + tds.get(2).text().split(" ")[0]); 
-            System.out.println(); 
-            */
+            String bundesland = tds.get(0).text();
+            String confirmedCount = tds.get(1).text().split(" ")[0];
+            String deathCount = SetDeathCount(confirmedCount);
+            array.add(SetGoogleFormatJsonRowObject(new JSONObject(), bundesland, confirmedCount, deathCount));
         }
 		return array;
+	}
+	
+	private static String SetDeathCount(String confirmedCount) {
+        if(confirmedCount.split(" ").length == 2) 
+        	return confirmedCount.replace("(", "").replace(")", "");
+        return "0";
 	}
 	
 	@SuppressWarnings("unchecked")
