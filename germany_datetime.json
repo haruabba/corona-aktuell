@@ -1,0 +1,24 @@
+{
+"cols": [
+          {"id": "team", "label": "Team", "type": "string"},
+          {"id": "start", "label": "Season Start Date", "type": "date"},
+          {"id": "end", "label": "Season End Date", "type": "date"}
+        ],
+
+"rows": [
+          {c: [{v: 'Baltimore Ravens'},     {v: 'Date(2000, 8, 5)'}, {v: 'Date(2001, 1, 5)'}]},
+          {c: [{v: 'New England Patriots'}, {v: 'Date(2001, 8, 5)'}, {v: 'Date(2002, 1, 5)'}]},
+          {c: [{v: 'Tampa Bay Buccaneers'}, {v: 'Date(2002, 8, 5)'}, {v: 'Date(2003, 1, 5)'}]},
+          {c: [{v: 'New England Patriots'}, {v: 'Date(2003, 8, 5)'}, {v: 'Date(2004, 1, 5)'}]},
+          {c: [{v: 'New England Patriots'}, {v: 'Date(2004, 8, 5)'}, {v: 'Date(2005, 1, 5)'}]},
+          {c: [{v: 'Pittsburgh Steelers'},  {v: 'Date(2005, 8, 5)'}, {v: 'Date(2006, 1, 5)'}]},
+          {c: [{v: 'Indianapolis Colts'},   {v: 'Date(2006, 8, 5)'}, {v: 'Date(2007, 1, 5)'}]},
+          {c: [{v: 'New York Giants'},      {v: 'Date(2007, 8, 5)'}, {v: 'Date(2008, 1, 5)'}]},
+          {c: [{v: 'Pittsburgh Steelers'},  {v: 'Date(2008, 8, 5)'}, {v: 'Date(2009, 1, 5)'}]},
+          {c: [{v: 'New Orleans Saints'},   {v: 'Date(2009, 8, 5)'}, {v: 'Date(2010, 1, 5)'}]},
+          {c: [{v: 'Green Bay Packers'},    {v: 'Date(2010, 8, 5)'}, {v: 'Date(2011, 1, 5)'}]},
+          {c: [{v: 'New York Giants'},      {v: 'Date(2011, 8, 5)'}, {v: 'Date(2012, 1, 5)'}]},
+          {c: [{v: 'Baltimore Ravens'},     {v: 'Date(2012, 8, 5)'}, {v: 'Date(2013, 1, 5)'}]},
+          {c: [{v: 'Seattle Seahawks'},     {v: 'Date(2013, 8, 5)'}, {v: 'Date(2014, 1, 5)'}]}
+      ]
+};       

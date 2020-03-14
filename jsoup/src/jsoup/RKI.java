@@ -15,6 +15,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class RKI {  
+	private static final String ROBERTKOCHINSTITUT = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
 	
     private static final HashMap<String, String> germanyHashMap = new HashMap<>();
     static {
@@ -36,13 +37,9 @@ public class RKI {
     	germanyHashMap.put("Thüringen", "DE-TH");
     }
 
-	public static void ParsingTable(String url) {
+	public static void ParsingValues() {
 		try {
-	        Document doc = Jsoup.connect(url).get();
-	        Elements tablerows = doc.select("table tr");
-
-	        //remove header row
-	        tablerows.remove(0);
+	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
 	        Iterator<Element> iterator = doc.select("table tr").iterator();
 	        WriteJson(iterator);
 	    } catch (IOException e) {
@@ -51,7 +48,7 @@ public class RKI {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static void WriteJson(Iterator<Element> iterator) {
+	private static void WriteJson(Iterator<Element> iterator) {
 		// JSON object. Key value pairs are unordered. JSONObject supports java.util.Map interface.
         JSONObject obj = new JSONObject();
         JSONArray columnArray = SetGoogleFormatJsonColumnArray(new JSONArray());
