@@ -7,7 +7,7 @@ function drawCurveTypes() {
       var optionsGermany = {
         chart: {
           title: 'Zeitraum',
-          subtitle: '28.01.2020 - 10.03.2020'
+          subtitle: 'Quelle: WHO Coronavirus (2019-nCoV) situation reports'
         },
         hAxis: {
           title: 'Datum'

@@ -1,20 +1,20 @@
 package jsoup;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.HashMap;
+import java.util.Iterator;
 
-
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-public class RKI {  
+public class RkiCrawler {
+	private static final String ROBERTKOCHINSTITUT = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
+	private static Iterator<Element> tableIterator;
 	
     private static final HashMap<String, String> germanyHashMap = new HashMap<>();
     static {
@@ -36,26 +36,21 @@ public class RKI {
     	germanyHashMap.put("Thüringen", "DE-TH");
     }
 
-	public static void ParsingTable(String url) {
+	public static void crawlData() {
 		try {
-	        Document doc = Jsoup.connect(url).get();
-	        Elements tablerows = doc.select("table tr");
-
-	        //remove header row
-	        tablerows.remove(0);
-	        Iterator<Element> iterator = doc.select("table tr").iterator();
-	        WriteJson(iterator);
+	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
+	        setTableIterator(doc.select("table tr").iterator());
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static void WriteJson(Iterator<Element> iterator) {
+	public static void writeJson() {
 		// JSON object. Key value pairs are unordered. JSONObject supports java.util.Map interface.
         JSONObject obj = new JSONObject();
-        JSONArray columnArray = SetGoogleFormatJsonColumnArray(new JSONArray());
-        JSONArray rowArray = SetGoogleFormatJsonRowArray(new JSONArray(), iterator);
+        JSONArray columnArray = setGoogleFormatJsonColumnArray(new JSONArray());
+        JSONArray rowArray = setGoogleFormatJsonRowArray(new JSONArray(), getTableIterator());
         obj.put("cols", columnArray);
         obj.put("rows", rowArray);
          
@@ -69,10 +64,10 @@ public class RKI {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static JSONArray SetGoogleFormatJsonColumnArray(JSONArray array) {
-        JSONObject bundesland = SetGoogleFormatJsonColumnObject(new JSONObject(), "Bundesland", "string");
-        JSONObject bestätiger = SetGoogleFormatJsonColumnObject(new JSONObject(), "Bestaetiger", "number");
-        JSONObject tod = SetGoogleFormatJsonColumnObject(new JSONObject(), "Tod", "number");
+	private static JSONArray setGoogleFormatJsonColumnArray(JSONArray array) {
+        JSONObject bundesland = setGoogleFormatJsonColumnObject(new JSONObject(), "Bundesland", "string");
+        JSONObject bestätiger = setGoogleFormatJsonColumnObject(new JSONObject(), "Bestaetiger", "number");
+        JSONObject tod = setGoogleFormatJsonColumnObject(new JSONObject(), "Tod", "number");
         array.add(bundesland);
         array.add(bestätiger);
         array.add(tod);
@@ -80,7 +75,7 @@ public class RKI {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static JSONObject SetGoogleFormatJsonColumnObject(JSONObject obj, String label, String type) {
+	private static JSONObject setGoogleFormatJsonColumnObject(JSONObject obj, String label, String type) {
 		obj.put("id", "");
 		obj.put("label", label);
 		obj.put("pattern", "");
@@ -89,7 +84,7 @@ public class RKI {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static JSONArray SetGoogleFormatJsonRowArray(JSONArray array, Iterator<Element> iterator) {
+	private static JSONArray setGoogleFormatJsonRowArray(JSONArray array, Iterator<Element> iterator) {
         //remove header row
         iterator.next();
         while (iterator.hasNext()) {
@@ -98,24 +93,24 @@ public class RKI {
             if(tds.get(0).text().equals("Gesamt")) break;
             String bundesland = tds.get(0).text();
             String confirmedCount = tds.get(1).text().split(" ")[0];
-            String deathCount = SetDeathCount(tds.get(1).text());
-            array.add(SetGoogleFormatJsonRowObject(new JSONObject(), bundesland, confirmedCount, deathCount));
+            String deathCount = setDeathCount(tds.get(1).text());
+            array.add(setGoogleFormatJsonRowObject(new JSONObject(), bundesland, confirmedCount, deathCount));
         }
 		return array;
 	}
 	
-	private static String SetDeathCount(String value) {
+	private static String setDeathCount(String value) {
         if(value.split(" ").length == 2) 
         	return value.split(" ")[1].replace("(", "").replace(")", "");
         return "0";
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static JSONObject SetGoogleFormatJsonRowObject(JSONObject jsonObject, String bundesland, String confirmedCount, String deathCount) {
+	private static JSONObject setGoogleFormatJsonRowObject(JSONObject jsonObject, String bundesland, String confirmedCount, String deathCount) {
         JSONArray jsonArray = new JSONArray();
         JSONObject bundeslandObj = new JSONObject();
         bundeslandObj.put("v", germanyHashMap.get(bundesland));
-        bundeslandObj.put("f", ConfigureUmlaute(bundesland));
+        bundeslandObj.put("f", configureUmlaute(bundesland));
         JSONObject confirmedCountObj = new JSONObject();
         confirmedCountObj.put("v", confirmedCount);
         JSONObject deathCountObj = new JSONObject();
@@ -127,7 +122,15 @@ public class RKI {
 		return jsonObject;
 	}
 	
-	private static String ConfigureUmlaute(String value) {
+	private static String configureUmlaute(String value) {
 		return value.replace("ü", "ue").replace("ö", "oe").replace("ä", "ae").replace("ß", "sz");
+	}
+
+	public static Iterator<Element> getTableIterator() {
+		return tableIterator;
+	}
+
+	public static void setTableIterator(Iterator<Element> tableIterator) {
+		RkiCrawler.tableIterator = tableIterator;
 	}
 }

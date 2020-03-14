@@ -3813,19 +3813,19 @@ input, select, textarea {
     position: relative;
   	min-height: 1px;
   	padding-left: 0px;
-  	padding-right: 70px;
+  	padding-right: 0px;
   }
 
 .col-md-8 {
 	width: 100%;
 	min-height: 1px;
   	position: relative;
-  	padding-left: 50px;
-  	padding-right: 200px;
+  	padding-left: 0px;
+  	padding-right: 0px;
   }
 
 .col-md-offset-2 {
-    margin-left: 25%;
+    margin-left: 20%;
   }
 .center {
   display: block;
@@ -3880,7 +3880,7 @@ input, select, textarea {
 }
 @media screen and (max-width: 768px) {
   #fh5co-counter{
-    padding: 1em 6em;
+    padding: 0.5em 0em;
   }
 }
 
@@ -3919,5 +3919,5 @@ input, select, textarea {
   letter-spacing: 1px;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 600;
-  color: gray;
+  color: red;
 }		
