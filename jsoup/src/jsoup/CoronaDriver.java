@@ -14,7 +14,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 public class CoronaDriver {
-	public static final String HTMLFILE = "../index.html";
+	private static final String HTMLFILE = "../index.html";
 	private static List<String> counterValues = new ArrayList<String>();
 	private static List<String> valueDifferences = new ArrayList<String>();
 
@@ -40,10 +40,7 @@ public class CoronaDriver {
 		    //a with href
 		    Element link = doc.select("a").first(); 
 		    link.text(String.format("Letztes Update: %s", datetime.format(now)));
-		    FileWriter writer = new FileWriter(HTMLFILE, false);
-		    writer.write(doc.html());
-		    writer.flush();
-		    writer.close();
+	        UpdateHtmlDocument(doc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,10 +59,7 @@ public class CoronaDriver {
 	        	if (i == 5) valueDifferences.add(2, CalculateValueDifference(row.attr("data-to"), counterValues.get(i)));
 	        	row.attr("data-to", counterValues.get(i++));
 	        }
-		    FileWriter writer = new FileWriter(HTMLFILE, false);
-		    writer.write(doc.html());
-		    writer.flush();
-		    writer.close();
+	        UpdateHtmlDocument(doc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -84,10 +78,17 @@ public class CoronaDriver {
 	        	if (j == 6) break;
 	        	diff.text(String.format("(+%s)", valueDifferences.get(j++)));
 	        }
-		    FileWriter writer = new FileWriter(HTMLFILE, false);
+	        UpdateHtmlDocument(doc);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void UpdateHtmlDocument(Document doc) {
+		try(FileWriter writer = new FileWriter(HTMLFILE, false)){
 		    writer.write(doc.html());
 		    writer.flush();
-		    writer.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
