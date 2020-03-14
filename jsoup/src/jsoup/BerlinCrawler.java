@@ -15,5 +15,4 @@ public class BerlinCrawler {
 	public static void crawlData() {
 
 	}
-
 }

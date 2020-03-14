@@ -38,6 +38,7 @@ public class RkiCrawler {
 
 	public static void crawlData() {
 		try {
+			
 	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
 	        setTableIterator(doc.select("table tr").iterator());
 	    } catch (IOException e) {
