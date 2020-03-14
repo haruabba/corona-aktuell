@@ -1,20 +1,18 @@
 package jsoup;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.HashMap;
+import java.util.Iterator;
 
-
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
-public class RKI {  
+public class RkiCrawler {
 	private static final String ROBERTKOCHINSTITUT = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
 	
     private static final HashMap<String, String> germanyHashMap = new HashMap<>();
@@ -37,7 +35,7 @@ public class RKI {
     	germanyHashMap.put("Thüringen", "DE-TH");
     }
 
-	public static void ParsingValues() {
+	public static void CrawlData() {
 		try {
 	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
 	        Iterator<Element> iterator = doc.select("table tr").iterator();

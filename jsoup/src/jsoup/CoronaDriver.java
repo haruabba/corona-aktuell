@@ -18,13 +18,13 @@ public class CoronaDriver {
 	private static List<String> counterValues = new ArrayList<String>();
 	private static List<String> valueDifferences = new ArrayList<String>();
 
-
 	public static void main(String[] args) {
 		//final String BERLIN = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
 		//final String SACHSEN = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
 		//final String SACHSENANHALT = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
-		WorldCount.ParsingValues();
-		RKI.ParsingValues();
+		WorldometerCrawler.CrawlData();
+		RkiCrawler.CrawlData();
+		BerlinCrawler.CrawlData();
 		UpdateCounterValues();
 		UpdateDifferenceValues();
 		UpdateDatetime();
@@ -40,7 +40,7 @@ public class CoronaDriver {
 		    //a with href
 		    Element link = doc.select("a").first(); 
 		    link.text(String.format("Letztes Update: %s", datetime.format(now)));
-	        UpdateHtmlDocument(doc);
+	        UpdateHtmlDocument(HTMLFILE, doc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,7 +59,7 @@ public class CoronaDriver {
 	        	valueDifferences.add(i, difference);
 	        	row.attr("data-to", counterValues.get(i++));
 	        }
-	        UpdateHtmlDocument(doc);
+	        UpdateHtmlDocument(HTMLFILE, doc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,14 +78,14 @@ public class CoronaDriver {
 	        	if (j == 6) break;
 	        	diff.text(String.format("(+%s)", valueDifferences.get(j++)));
 	        }
-	        UpdateHtmlDocument(doc);
+	        UpdateHtmlDocument(HTMLFILE, doc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	private static void UpdateHtmlDocument(Document doc) {
+	public static void UpdateHtmlDocument(String fileName, Document doc) {
 		try(FileWriter writer = new FileWriter(HTMLFILE, false)){
 		    writer.write(doc.html());
 		    writer.flush();

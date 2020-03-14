@@ -10,10 +10,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class WorldCount {
+public class WorldometerCrawler {
 	private static final String WORLDOMETER = "https://www.worldometers.info/coronavirus/";
 
-	public static List<String> ParsingValues() {
+	public static List<String> CrawlData() {
 		List<String> counterValues = new ArrayList<String>();
 		try {
 	        Document doc = Jsoup.connect(WORLDOMETER).get();
@@ -46,4 +46,5 @@ public class WorldCount {
 	    }
         return counterValues;
 	}
+
 }
