@@ -55,8 +55,8 @@ public class CoronaDriver {
         	int i = 0;
 	        while (counterIterator.hasNext()) {
 	        	Element row = counterIterator.next();
-	        	if (i < 3) valueDifferences.add(CalculateValueDifference(row.attr("data-to"), counterValues.get(i)));
-	        	if (i == 5) valueDifferences.add(2, CalculateValueDifference(row.attr("data-to"), counterValues.get(i)));
+	        	String difference = CalculateValueDifference(row.attr("data-to"), counterValues.get(i));
+	        	valueDifferences.add(i, difference);
 	        	row.attr("data-to", counterValues.get(i++));
 	        }
 	        UpdateHtmlDocument(doc);
