@@ -15,103 +15,38 @@ import org.jsoup.nodes.Element;
 
 public class CoronaDriver {
 	private static final String HTMLFILE = "../index.html";
-	private static List<String> counterValues = new ArrayList<String>();
-	private static List<String> valueDifferences = new ArrayList<String>();
+	private static final String BERLINHTML = "../berlin.html";
 
 	public static void main(String[] args) {
 		//final String BERLIN = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
 		//final String SACHSEN = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
 		//final String SACHSENANHALT = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
-		WorldometerCrawler.CrawlData();
-		RkiCrawler.CrawlData();
-		BerlinCrawler.CrawlData();
-		UpdateCounterValues();
-		UpdateDifferenceValues();
-		UpdateDatetime();
+		WorldometerCrawler.crawlData();
+		WorldometerCrawler.setCounterValues();
+		RkiCrawler.crawlData();
+		RkiCrawler.writeJson();
+		updateHtmlFiles();
 		System.out.println("Done");
     }
 	
-	private static void UpdateDatetime() {
-		DateTimeFormatter datetime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");  
-		LocalDateTime now = LocalDateTime.now();  
-		File in = new File(HTMLFILE);
-		try {	
-			Document doc = Jsoup.parse(in, null);
-		    //a with href
-		    Element link = doc.select("a").first(); 
-		    link.text(String.format("Letztes Update: %s", datetime.format(now)));
-	        UpdateHtmlDocument(HTMLFILE, doc);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	private static void updateHtmlFiles() {
+		updateCounterValues();
+		updateDifferenceValues();
+		updateDatetime();
 	}
 	
-	private static void UpdateCounterValues() {
-		File in = new File(HTMLFILE);
-		try {	
-			Document doc = Jsoup.parse(in, null);
-	        Iterator<Element> counterIterator = doc.select("span[data-to]").iterator();
-        	int i = 0;
-	        while (counterIterator.hasNext()) {
-	        	Element row = counterIterator.next();
-	        	String difference = CalculateValueDifference(row.attr("data-to"), counterValues.get(i));
-	        	valueDifferences.add(i, difference);
-	        	row.attr("data-to", counterValues.get(i++));
-	        }
-	        UpdateHtmlDocument(HTMLFILE, doc);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	private static void updateCounterValues() {
+		DataSynchronizer.updateCounterValues(HTMLFILE);
+		DataSynchronizer.updateGermanyCounterValues(BERLINHTML);
 	}
 	
-	private static void UpdateDifferenceValues() {
-		File in = new File(HTMLFILE);
-		try {	
-			Document doc = Jsoup.parse(in, null);	        
-	        Iterator<Element> differenceIterator = doc.select("span.fh5co-counter-label").iterator();
-	        int j = 0;
-	        while (differenceIterator.hasNext()) {
-	        	Element diff = differenceIterator.next();
-	        	if (j == 3) differenceIterator.hasNext();
-	        	if (j == 6) break;
-	        	diff.text(String.format("(+%s)", valueDifferences.get(j++)));
-	        }
-	        UpdateHtmlDocument(HTMLFILE, doc);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	private static void updateDifferenceValues() {
+		DataSynchronizer.updateDifferenceValues(HTMLFILE);
+		DataSynchronizer.updateGermanyDifferenceValues(BERLINHTML);
 	}
 	
-	public static void UpdateHtmlDocument(String fileName, Document doc) {
-		try(FileWriter writer = new FileWriter(HTMLFILE, false)){
-		    writer.write(doc.html());
-		    writer.flush();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	private static String CalculateValueDifference(String valuePrev, String valueCurr) {
-		return Integer.toString(Integer.valueOf(valueCurr) - Integer.valueOf(valuePrev));
-	}
-
-	public static List<String> getCounterValues() {
-		return counterValues;
-	}
-
-	public static void setCounterValues(List<String> counterValues) {
-		CoronaDriver.counterValues = counterValues;
-	}
-
-	public static List<String> getValueDifferences() {
-		return valueDifferences;
-	}
-
-	public static void setValueDifferences(List<String> valueDifferences) {
-		CoronaDriver.valueDifferences = valueDifferences;
+	private static void updateDatetime() {
+		DataSynchronizer.updateDatetime(HTMLFILE);
+		DataSynchronizer.updateDatetime(BERLINHTML);
 	}
 }
