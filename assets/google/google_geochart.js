@@ -18,7 +18,7 @@ function drawMarkersMap() {
     displayMode: 'regions',
 	  region: 'DE',
 	  resolution: 'provinces',
-    colorAxis: {minValue: 0, maxValue: 150, colors: ['#fff', '#FFE4E1', '#A52A2A']},
+    colorAxis: {minValue: 0, maxValue: 300, colors: ['#fff', '#FFE4E1', '#A52A2A']},
     legend: 'none'
   };
 

@@ -2,12 +2,19 @@ google.charts.load('current', {'packages':['bar']});
 google.charts.setOnLoadCallback(drawStuff);
 
   function drawStuff() {
-    var sachsenData = new google.visualization.arrayToDataTable(sachsenanhaltStadt);
+
+    var jsonData = $.ajax({
+      url: "https://raw.githubusercontent.com/haruabba/corona-aktuell/master/sachsen_anhalt_dataset.json",
+      dataType: "json",
+      async: false,
+    }).responseText;
+
+    var sachsenData = new google.visualization.DataTable(jsonData);
 
     var options = {
         chart: {
             title: 'Status',
-            subtitle: 'Insgesamt 9 wurden infiziert (Quelle: Mitteldeutsche Zeitung)'
+            subtitle: 'Quelle: MS Sachsen-Anhalt'
           },
         height: 400,
         chartArea: {left: 0, top: 0, width: "100%", height: "100%"},

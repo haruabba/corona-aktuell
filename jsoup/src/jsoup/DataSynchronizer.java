@@ -22,7 +22,9 @@ public class DataSynchronizer {
 	private static List<String> germanyCounterValues = new ArrayList<String>();
 	private static List<String> worldValueDifferences = new ArrayList<String>();
 	private static List<String> germanyValueDifferences = new ArrayList<String>();
-	
+	private static List<String> sachsenAnhaltCounterValues = new ArrayList<String>();
+	private static List<String> sachsenAnhaltValueDifferences = new ArrayList<String>();
+
 	public static void updateDatetime(String fileName) {
 		DateTimeFormatter datetime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");  
 		LocalDateTime now = LocalDateTime.now();  
@@ -58,7 +60,7 @@ public class DataSynchronizer {
 		}
 	}
 	
-	public static void updateCounterValues(String fileName) {
+	public static void updateCounterValues(String fileName, List<String> firstCounter, List<String> secondCounter, List<String> firstDifference, List<String> secondDifference) {
 		File in = new File(fileName);
 		try {	
 			Document doc = Jsoup.parse(in, null);
@@ -68,13 +70,13 @@ public class DataSynchronizer {
 	        	Element row = counterIterator.next();
 	        	String difference;
 	        	if (i < 3) {
-	        		difference = CalculateValueDifference(row.attr("data-to"), getWorldCounterValues().get(i));
-		        	getWorldValueDifferences().add(i, difference);
-		        	row.attr("data-to", getWorldCounterValues().get(i));
+	        		difference = CalculateValueDifference(row.attr("data-to"), firstCounter.get(i));
+	        		firstDifference.add(i, difference);
+		        	row.attr("data-to", firstCounter.get(i));
 	        	} else {
-	        		difference = CalculateValueDifference(row.attr("data-to"), getGermanyCounterValues().get(i - 3));
-		        	getGermanyValueDifferences().add(i - 3, difference);
-		        	row.attr("data-to", getGermanyCounterValues().get(i - 3));
+	        		difference = CalculateValueDifference(row.attr("data-to"), secondCounter.get(i - 3));
+	        		secondDifference.add(i - 3, difference);
+		        	row.attr("data-to", secondCounter.get(i - 3));
 	        	}
 	        	i++;
 	        }
@@ -104,7 +106,7 @@ public class DataSynchronizer {
 		}
 	}
 	
-	public static void updateDifferenceValues(String fileName) {
+	public static void updateDifferenceValues(String fileName, List<String> firstDifference, List<String> secondDifference) {
 		File in = new File(fileName);
 		try {	
 			Document doc = Jsoup.parse(in, null);	        
@@ -115,10 +117,10 @@ public class DataSynchronizer {
 	        	if (j == 3) differenceIterator.hasNext();
 	        	if (j == 6) break;
 	        	if (j < 3) {
-		        	diff.text(String.format("(+%s)", getWorldValueDifferences().get(j)));
+		        	diff.text(String.format("(+%s)", firstDifference.get(j)));
 	        	}
 	        	else {
-		        	diff.text(String.format("(+%s)", getGermanyValueDifferences().get(j - 3)));
+		        	diff.text(String.format("(+%s)", secondDifference.get(j - 3)));
 	        	}
 	        	j++;
 	        }
@@ -173,5 +175,20 @@ public class DataSynchronizer {
 
 	public static void setWorldValueDifferences(List<String> worldValueDifferences) {
 		DataSynchronizer.worldValueDifferences = worldValueDifferences;
+	}
+	public static List<String> getSachsenAnhaltCounterValues() {
+		return sachsenAnhaltCounterValues;
+	}
+
+	public static void setSachsenAnhaltCounterValues(List<String> sachsenAnhaltCounterValues) {
+		DataSynchronizer.sachsenAnhaltCounterValues = sachsenAnhaltCounterValues;
+	}
+
+	public static List<String> getSachsenAnhaltValueDifferences() {
+		return sachsenAnhaltValueDifferences;
+	}
+
+	public static void setSachsenAnhaltValueDifferences(List<String> sachsenAnhaltValueDifferences) {
+		DataSynchronizer.sachsenAnhaltValueDifferences = sachsenAnhaltValueDifferences;
 	}
 }

@@ -1,7 +1,6 @@
 package jsoup;
 
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
@@ -18,6 +17,7 @@ import org.jsoup.select.Elements;
 
 public class RkiCrawler {
 	private static final String ROBERTKOCHINSTITUT = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
+	private static final String GERMANYDATASET = "../germany_dataset.json";
 	private static Iterator<Element> tableIterator;
 	
     private static final HashMap<String, String> germanyHashMap = new HashMap<>();
@@ -41,8 +41,7 @@ public class RkiCrawler {
     }
 
 	public static void crawlData() {
-		try {
-			
+		try {	
 	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
 	        setTableIterator(doc.select("table tr").iterator());
 	    } catch (IOException e) {
@@ -60,7 +59,7 @@ public class RkiCrawler {
         obj.put("rows", rowArray);
          
         //Write JSON file
-        try (Writer writer = new OutputStreamWriter(new FileOutputStream("../germany_dataset.json"), StandardCharsets.UTF_8)) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(GERMANYDATASET), StandardCharsets.UTF_8)) {
         	writer.write(obj.toJSONString());
         	writer.flush();
         } catch (IOException e) {
@@ -97,7 +96,7 @@ public class RkiCrawler {
             Elements tds = row.select("td");
             if(tds.get(0).text().equals("Gesamt")) break;
             String bundesland = tds.get(0).text();
-            String confirmedCount = tds.get(1).text().split(" ")[0];
+            String confirmedCount = tds.get(1).text().split(" ")[0].replace(".", "");
             String deathCount = setDeathCount(tds.get(1).text());
             array.add(setGoogleFormatJsonRowObject(new JSONObject(), bundesland, confirmedCount, deathCount));
         }

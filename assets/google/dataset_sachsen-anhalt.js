@@ -12,4 +12,4 @@
     [{v: 'Landkreis Börde', f: 'Börde'}, 2, 0],
     [{v: 'Salzlandkreis', f: 'Salzlandkreis'}, 1, 0],
     [{v: 'Saalekreis', f: 'Saalekreis'}, 1, 0],
-  ];
+  ];    

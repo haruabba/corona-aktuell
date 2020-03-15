@@ -12,6 +12,8 @@ public class CoronaDriver {
 		WorldometerCrawler.setCounterValues();
 		RkiCrawler.crawlData();
 		RkiCrawler.writeJson();
+		SachsenAnhaltCrawler.crawlData();
+		SachsenAnhaltCrawler.writeJson();
 		updateHtmlFiles();
 		System.out.println("Done");
     }
@@ -23,17 +25,17 @@ public class CoronaDriver {
 	}
 	
 	private static void updateCounterValues() {
-		DataSynchronizer.updateCounterValues(HTMLFILE);
+		DataSynchronizer.updateCounterValues(HTMLFILE, DataSynchronizer.getWorldCounterValues(), DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getWorldValueDifferences(), DataSynchronizer.getGermanyValueDifferences());
 		DataSynchronizer.updateGermanyCounterValues(BERLINHTML);
 		DataSynchronizer.updateGermanyCounterValues(SACHSENHTML);
-		DataSynchronizer.updateGermanyCounterValues(SACHSENANHALTHTML);
+		DataSynchronizer.updateCounterValues(SACHSENANHALTHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getSachsenAnhaltCounterValues(), DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenAnhaltValueDifferences());
 	}
 	
 	private static void updateDifferenceValues() {
-		DataSynchronizer.updateDifferenceValues(HTMLFILE);
+		DataSynchronizer.updateDifferenceValues(HTMLFILE, DataSynchronizer.getWorldValueDifferences(), DataSynchronizer.getGermanyValueDifferences());
 		DataSynchronizer.updateGermanyDifferenceValues(BERLINHTML);
 		DataSynchronizer.updateGermanyDifferenceValues(SACHSENHTML);
-		DataSynchronizer.updateGermanyDifferenceValues(SACHSENANHALTHTML);
+		DataSynchronizer.updateDifferenceValues(SACHSENANHALTHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenAnhaltValueDifferences());
 	}
 	
 	private static void updateDatetime() {
