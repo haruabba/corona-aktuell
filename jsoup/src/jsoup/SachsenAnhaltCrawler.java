@@ -22,7 +22,6 @@ public class SachsenAnhaltCrawler {
 	private static final String SACHSENANHALTDATASET = "../sachsen_anhalt_dataset.json";
 	private static Iterator<Element> tableIterator;
 
-
 	public static void crawlData() {
 		try {	
 	        Document doc = Jsoup.connect(MSSACHSENANHALT).get();
@@ -51,10 +50,10 @@ public class SachsenAnhaltCrawler {
 	
 	@SuppressWarnings("unchecked")
 	private static JSONArray setGoogleFormatJsonColumnArray(JSONArray array) {
-        JSONObject bundesland = setGoogleFormatJsonColumnObject(new JSONObject(), "Stadt", "string");
+        JSONObject stadt = setGoogleFormatJsonColumnObject(new JSONObject(), "Stadt", "string");
         JSONObject bestätiger = setGoogleFormatJsonColumnObject(new JSONObject(), "Bestätiger", "number");
         JSONObject tod = setGoogleFormatJsonColumnObject(new JSONObject(), "Tod", "number");
-        array.add(bundesland);
+        array.add(stadt);
         array.add(bestätiger);
         array.add(tod);
 		return array;
@@ -112,7 +111,6 @@ public class SachsenAnhaltCrawler {
         DataSynchronizer.getSachsenAnhaltCounterValues().add(newCounter);
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
-
 	}
 	
 	private static String setStadtName(String[] rowElements) {

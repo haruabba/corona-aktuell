@@ -22,6 +22,8 @@ public class DataSynchronizer {
 	private static List<String> germanyCounterValues = new ArrayList<String>();
 	private static List<String> worldValueDifferences = new ArrayList<String>();
 	private static List<String> germanyValueDifferences = new ArrayList<String>();
+	private static List<String> sachsenCounterValues = new ArrayList<String>();
+	private static List<String> sachsenValueDifferences = new ArrayList<String>();
 	private static List<String> sachsenAnhaltCounterValues = new ArrayList<String>();
 	private static List<String> sachsenAnhaltValueDifferences = new ArrayList<String>();
 
@@ -190,5 +192,21 @@ public class DataSynchronizer {
 
 	public static void setSachsenAnhaltValueDifferences(List<String> sachsenAnhaltValueDifferences) {
 		DataSynchronizer.sachsenAnhaltValueDifferences = sachsenAnhaltValueDifferences;
+	}
+
+	public static List<String> getSachsenCounterValues() {
+		return sachsenCounterValues;
+	}
+
+	public static void setSachsenCounterValues(List<String> sachsenCounterValues) {
+		DataSynchronizer.sachsenCounterValues = sachsenCounterValues;
+	}
+
+	public static List<String> getSachsenValueDifferences() {
+		return sachsenValueDifferences;
+	}
+
+	public static void setSachsenValueDifferences(List<String> sachsenValueDifferences) {
+		DataSynchronizer.sachsenValueDifferences = sachsenValueDifferences;
 	}
 }
