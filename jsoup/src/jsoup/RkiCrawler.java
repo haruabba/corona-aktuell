@@ -1,7 +1,11 @@
 package jsoup;
 
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -56,9 +60,9 @@ public class RkiCrawler {
         obj.put("rows", rowArray);
          
         //Write JSON file
-        try (FileWriter file = new FileWriter("../germany_dataset.json")) {
-            file.write(obj.toJSONString());
-            file.flush();
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream("../germany_dataset.json"), StandardCharsets.UTF_8)) {
+        	writer.write(obj.toJSONString());
+        	writer.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,7 +71,7 @@ public class RkiCrawler {
 	@SuppressWarnings("unchecked")
 	private static JSONArray setGoogleFormatJsonColumnArray(JSONArray array) {
         JSONObject bundesland = setGoogleFormatJsonColumnObject(new JSONObject(), "Bundesland", "string");
-        JSONObject bestätiger = setGoogleFormatJsonColumnObject(new JSONObject(), "Bestaetiger", "number");
+        JSONObject bestätiger = setGoogleFormatJsonColumnObject(new JSONObject(), "Bestätiger", "number");
         JSONObject tod = setGoogleFormatJsonColumnObject(new JSONObject(), "Tod", "number");
         array.add(bundesland);
         array.add(bestätiger);
@@ -111,7 +115,7 @@ public class RkiCrawler {
         JSONArray jsonArray = new JSONArray();
         JSONObject bundeslandObj = new JSONObject();
         bundeslandObj.put("v", germanyHashMap.get(bundesland));
-        bundeslandObj.put("f", configureUmlaute(bundesland));
+        bundeslandObj.put("f", bundesland);
         JSONObject confirmedCountObj = new JSONObject();
         confirmedCountObj.put("v", confirmedCount);
         JSONObject deathCountObj = new JSONObject();
@@ -121,10 +125,6 @@ public class RkiCrawler {
         jsonArray.add(confirmedCountObj);
         jsonArray.add(deathCountObj);
 		return jsonObject;
-	}
-	
-	private static String configureUmlaute(String value) {
-		return value.replace("ü", "ue").replace("ö", "oe").replace("ä", "ae").replace("ß", "sz");
 	}
 
 	public static Iterator<Element> getTableIterator() {

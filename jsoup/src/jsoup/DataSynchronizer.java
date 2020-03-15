@@ -1,8 +1,11 @@
 package jsoup;
 
 import java.io.File;
-import java.io.FileWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -127,7 +130,7 @@ public class DataSynchronizer {
 	}
 	
 	public static void updateHtmlDocument(String fileName, Document doc) {
-		try(FileWriter writer = new FileWriter(fileName, false)){
+		try(Writer writer = new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8)){
 		    writer.write(doc.html());
 		    writer.flush();
 		} catch (IOException e) {
