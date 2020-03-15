@@ -5,7 +5,9 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.StringJoiner;
 
 import org.json.simple.JSONArray;
@@ -69,15 +71,14 @@ public class SachsenAnhaltCrawler {
 	
 	@SuppressWarnings("unchecked")
 	private static JSONArray setGoogleFormatJsonRowArray(JSONArray array) {
-		String[] tableRows;
+		List<String> tableRows;
+		String[] tableItems;
 		try {
 			tableRows = parsingHtmlString();
-	        for(String row : tableRows) {
-	            if (row.contains("Gesamtergebnis")) {
-	            	setSachsenAnhaltCounter(row);
-	            	break;
-	            }
-	            String[] tableElements = row.split(" ");
+			tableItems = tableRows.get(0).split("<br>"); 
+			setSachsenAnhaltCounter(tableRows.get(1));
+	        for(String item : tableItems) {
+	            String[] tableElements = item.split(" ");
 	            String stadt = setStadtName(tableElements);
 	            String confirmedCount = setConfirmedCount(tableElements);
 	            String deathCount = setDeathCount(tableElements);
@@ -89,15 +90,18 @@ public class SachsenAnhaltCrawler {
 		return array;
 	}
 	
-	private static String[] parsingHtmlString() {
-		String[] tableRows = null;
+	private static List<String> parsingHtmlString() {
+		List<String> tableRows = new ArrayList<String>();
         while (getTableIterator().hasNext()) {
         	Element row = getTableIterator().next();
-            if(!row.text().contains("LK")) continue;
-            else{
-            	tableRows = row.html().split("<br>");
-            	break;
+    		if(row.text().isBlank()) continue;
+            if(row.text().contains("LK")){
+            	tableRows.add(row.html());
             }
+        	if(row.text().contains("Gesamtergebnis")) {
+        		tableRows.add(row.text());
+        		break;
+        	}
         }
         return tableRows;
 	}
@@ -108,6 +112,7 @@ public class SachsenAnhaltCrawler {
         DataSynchronizer.getSachsenAnhaltCounterValues().add(newCounter);
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
+
 	}
 	
 	private static String setStadtName(String[] rowElements) {
@@ -119,7 +124,7 @@ public class SachsenAnhaltCrawler {
 	}
 	
 	private static String setConfirmedCount(String[] rowElements) {
-		return rowElements[rowElements.length - 1];
+		return rowElements[rowElements.length - 1].replace("&nbsp;", "");
 	}
 	
 	private static String setDeathCount(String[] rowElements) {
