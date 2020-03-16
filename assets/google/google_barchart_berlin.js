@@ -8,7 +8,7 @@ google.charts.setOnLoadCallback(drawStuff);
       async: false,
     }).responseText;
 
-    var germanyData = new google.visualization.arrayToDataTable(jsonData);
+    var germanyData = new google.visualization.DataTable(jsonData);
 
     var options = {
         chart: {

@@ -52,11 +52,11 @@
      <div class="row animate-box"> 
       <div class="col-md-8 col-md-offset-2"> 
        <div class="row"> 
-        <div class="col-md-3 text-center"> <font color="grey">Infektionen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="48" data-speed="1000" data-refresh-interval="332"></span> <span class="fh5co-counter-label">(+49)</span> 
+        <div class="col-md-3 text-center"> <font color="grey">Infektionen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="332" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+49)</span> 
         </div> 
-        <div class="col-md-3 text-center"> <font color="grey">Todesfälle</font> <span class="fh5co-counter-death js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="0"></span> <span class="fh5co-counter-label">(-)</span> 
+        <div class="col-md-3 text-center"> <font color="grey">Todesfälle</font> <span class="fh5co-counter-death js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(-)</span> 
         </div> 
-        <div class="col-md-3 text-center"> <font color="grey">Heilungen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="0"></span> <span class="fh5co-counter-label" style="color: green">(-)</span> 
+        <div class="col-md-3 text-center"> <font color="grey">Heilungen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="0" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label" style="color: green">(-)</span> 
         </div> 
         <div class="col-md-3 text-center"> <font color="grey">Sterberate</font> <font class="fh5co-counter">0%</font> <span class="fh5co-counter-label"></span> 
         </div> 
@@ -94,10 +94,10 @@
       <h2>Bezirke von Fällen</h2> 
      </header> <iframe id="berlinkarte" src="https://datawrapper.dwcdn.net/63ZUq/12/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="600"></iframe> 
      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();
-     </script> 
+     </script> <br><br>
      <div class="chart"> 
       <div id="berlin_Table_div"></div> 
-      <p align="right">Quelle: <a href="https://www.berlin.de/sen/gpg/service/presse/2020/pressemitteilung.907568.php" target="_blank">MDR Sachsen-Anhalt</a></p> 
+      <p align="right">Quelle: <a href="https://www.tagesspiegel.de/berlin/coronavirus-in-berlin-schulen-und-kitas-geschlossen-was-sie-wissen-muessen-wo-sie-hilfe-bekommen/25616798.html" target="_blank">DER TAGESSPIEGEL</a></p> 
      </div> 
     </section> <!-- Karte --> 
     <section id="barchart" class="main special"> 
@@ -105,7 +105,7 @@
       <h2>Barchart von Fällen</h2> 
      </header> 
      <div class="chart"> 
-      <div id="berlin_div"></div> 
+      <div id="berlin_div"></div> <br>
       <p align="right">Quelle: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO Novel Coronavirus (2019-nCoV) situation reports</a></p> 
      </div> 
     </section> <!-- Datendiagramme --> 
@@ -114,7 +114,7 @@
       <h2>Linechart von Fällen</h2> 
      </header> 
      <div class="chart"> 
-      <div id="linechart_material_berlin"></div> 
+      <div id="linechart_material_berlin"></div><br>
       <p align="right">Quelle: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO Novel Coronavirus (2019-nCoV) situation reports</a></p> 
      </div> 
     </section> <!-- Datendiagramme --> 
@@ -285,8 +285,7 @@
   <script src="assets/js/jquery.flexslider-min.js"></script> 
   <script src="assets/js/jquery.countTo.js"></script> <!-- Google Charts --> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-  <script src="assets/google/google_geochart.js"></script> 
-  <script src="assets/google/google_tablechart.js"></script> 
+  <script src="assets/google/dataset_berlin.js"></script> 
   <script src="assets/google/google_barchart_berlin.js"></script> 
   <script src="assets/google/google_linechart_berlin.js"></script> 
   <script src="assets/google/google_tablechart_berlin.js"></script> 

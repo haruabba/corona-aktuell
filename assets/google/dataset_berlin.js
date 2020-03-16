@@ -9,21 +9,11 @@
         [new Date(2020, 2, 7), 28, 0],
         [new Date(2020, 2, 8), 40, 0],
         [new Date(2020, 2, 9), 48, 0],
-        [new Date(2020, 2, 10), 48, 0],
+        [new Date(2020, 2, 10), 58, 0],
+        [new Date(2020, 2, 11), 81, 0],
+        [new Date(2020, 2, 12), 118, 0],
+        [new Date(2020, 2, 13), 158, 0],
+        [new Date(2020, 2, 14), 216, 0],
+        [new Date(2020, 2, 15), 283, 0],
+        [new Date(2020, 2, 16), 332, 0]
     ];
-
-  const berlinBezirk = [
-    ['Bezirk', 'Bestätiger', 'Tod'],
-    [{v: 'Wilmersdorf', f: 'Charlottenburg-Wilmersdorf'}, 9, 0],
-    [{v: 'Friedrichshain', f: 'Friedrichshain-Kreuzberg'}, 9, 0],
-    [{v: 'Lichtenberg', f: 'Lichtenberg'}, 1, 0],
-    [{v: 'Marzahn', f: 'Marzahn-Hellersdorf'}, 1, 0],
-    [{v: 'Mitte', f: 'Mitte'}, 8, 0], 
-    [{v: 'Neukölln', f: 'Neukölln'}, 1, 0],
-    [{v: 'Pankow', f: 'Pankow'}, 5, 0],
-    [{v: 'Reinickendorf', f: 'Reinickendorf'}, 3, 0],
-    [{v: 'Spandau', f: 'Spandau'}, 2, 0],
-    [{v: 'Steglitz', f: 'Steglitz-Zehlendorf'}, 3, 0],
-    [{v: 'Tempelhof', f: 'Tempelhof-Schöneberg'}, 5, 0],
-    [{v: 'Treptow', f: 'Treptow-Köpenick'}, 0, 0]
-  ];
