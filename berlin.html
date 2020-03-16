@@ -24,7 +24,7 @@
    </header> 
    <br> <!-- Display --> 
    <div class="container-wrap-round"> 
-    <div align="right" style="margin-right: 10px"> <a href="javascript:window.location.href=window.location.href">Letztes Update: 16.03.2020 10:47</a> 
+    <div align="right" style="margin-right: 10px"> <a href="javascript:window.location.href=window.location.href">Letztes Update: 16.03.2020 11:12</a> 
     </div> 
     <div id="fh5co-counter" class="fh5co-counters"> 
      <div align="center"> 
@@ -33,7 +33,7 @@
      <div class="row animate-box"> 
       <div class="col-md-8 col-md-offset-2"> 
        <div class="row"> 
-        <div class="col-md-3 text-center"> <font color="grey">Infektionen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="5813" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+0)</span> 
+        <div class="col-md-3 text-center"> <font color="grey">Infektionen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="6215" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+0)</span> 
         </div> 
         <div class="col-md-3 text-center"> <font color="grey">Todesfälle</font> <span class="fh5co-counter-death js-counter" data-from="0" data-to="13" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+0)</span> 
         </div> 
@@ -73,8 +73,8 @@
    </div> <!-- Nav --> 
    <nav id="nav"> 
     <ul> 
-     <li><a href="https://haruabba.github.io/corona-aktuell/" class="active">Deutschland</a></li> 
-     <li><a href="#karte">Karte</a></li> 
+     <li><a href="https://haruabba.github.io/corona-aktuell/">Deutschland</a></li> 
+     <li><a href="#karte" class="active">Karte</a></li> 
      <li><a href="#linechart">Linechart</a></li> 
      <li><a href="#notfallkontakte">Notfallkontakte</a></li> 
      <li><a href="#untersuchungsstellen">Untersuchungsstellen</a></li> 
@@ -85,17 +85,19 @@
     <section id="karte" class="main special"> 
      <header class="spotlight"> 
       <h2>Bezirke von Fällen</h2> 
-     </header> <iframe id="datawrapper-chart-63ZUq" src="https://datawrapper.dwcdn.net/63ZUq/12/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="400"></iframe> 
+     </header> <iframe id="berlinkarte" src="https://datawrapper.dwcdn.net/63ZUq/12/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="600"></iframe> 
      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();
      </script> 
-     <br> 
-     <br> 
-     <br> 
+    </section> <!-- Karte --> 
+    <section id="barchart" class="main special"> 
+     <header class="spotlight"> 
+      <h2>Barchart von Fällen</h2> 
+     </header> 
      <div class="chart"> 
       <div id="berlin_div"></div> 
-      <p align="right">Quelle: <a href="https://www.tagesspiegel.de/berlin/infizierte-hotlines-anlaufstellen-coronavirus-in-berlin-das-ist-der-aktuelle-stand/25616798.html">Der Tagesspiegel</a></p> 
+      <p align="right">Quelle: <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">WHO Novel Coronavirus (2019-nCoV) situation reports</a></p> 
      </div> 
-    </section> <!-- Karte --> 
+    </section> <!-- Datendiagramme --> 
     <section id="linechart" class="main special"> 
      <header class="spotlight"> 
       <h2>Linechart von Fällen</h2> 
@@ -137,7 +139,7 @@
      </header> 
      <div style="margin-bottom: 15px;" id="tabbable_1_4" tabindex="0"> <iframe title="Corona-Untersuchungsstellen Berlin" aria-label="Corona-Untersuchungsstellen Berlin" id="datawrapper-chart-Yt1dT" src="https://datawrapper.dwcdn.net/Yt1dT/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="335"> </iframe> 
       <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
-            </script> 
+      </script> 
      </div> 
      <br> 
      <div class="table-wrapper"> 

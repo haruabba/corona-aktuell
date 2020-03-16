@@ -24,7 +24,7 @@
    </header> 
    <br> <!-- Display --> 
    <div class="container-wrap-round"> 
-    <div align="right" style="margin-right: 10px"> <a href="javascript:window.location.href=window.location.href">Letztes Update: 16.03.2020 10:47</a> 
+    <div align="right" style="margin-right: 10px"> <a href="javascript:window.location.href=window.location.href">Letztes Update: 16.03.2020 11:12</a> 
     </div> 
     <div id="fh5co-counter" class="fh5co-counters"> 
      <div align="center"> 
@@ -33,7 +33,7 @@
      <div class="row animate-box"> 
       <div class="col-md-8 col-md-offset-2"> 
        <div class="row"> 
-        <div class="col-md-3 text-center"> <font color="grey">Infektionen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="5813" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+0)</span> 
+        <div class="col-md-3 text-center"> <font color="grey">Infektionen</font> <span class="fh5co-counter js-counter" data-from="0" data-to="6215" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+0)</span> 
         </div> 
         <div class="col-md-3 text-center"> <font color="grey">Todesfälle</font> <span class="fh5co-counter-death js-counter" data-from="0" data-to="13" data-speed="1000" data-refresh-interval="50"></span> <span class="fh5co-counter-label">(+0)</span> 
         </div> 
@@ -75,7 +75,8 @@
    </div> <!-- Nav --> 
    <nav id="nav"> 
     <ul> 
-     <li><a href="https://haruabba.github.io/corona-aktuell/" class="active">Deutschland</a></li> 
+     <li><a href="https://haruabba.github.io/corona-aktuell/">Deutschland</a></li> 
+     <li><a href="#karte" class="active">Karte</a></li> 
      <li><a href="#barchart">Barchart</a></li> 
      <li><a href="#linechart">Linechart</a></li> 
      <li><a href="#notfallkontakte">Notfallkontakte</a></li> 
@@ -83,18 +84,26 @@
      <li><a href="#dataquelle">Datenquelle</a></li> 
     </ul> 
    </nav> <!-- Main --> 
-   <div id="main"> <!-- Content --> <!-- Barchart --> 
-    <section id="barchart" class="main special"> 
+   <div id="main"> <!-- Content --> 
+    <section id="karte" class="main special"> 
      <header class="spotlight"> 
       <h2>Städte von Fällen</h2> 
-     </header> 
-     <div class="chart"> 
-      <div id="sachsen-anhalt_div"></div> 
-     </div> 
+     </header> <iframe id="sachsenanhaltkarte" src="https://app.23degrees.io/embed/NFERNnLsFuxHmB6s-bar-horizontal-bestaetigte-corona-faelle-in" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="550"> </iframe> 
+     <script id="iframe23-NFERNnLsFuxHmB6s-bar-horizontal-bestaetigte-corona-faelle-in" src="https://app.23degrees.io/services/public/embed-code/NFERNnLsFuxHmB6s-bar-horizontal-bestaetigte-corona-faelle-in"></script> 
+     <br> 
      <br> 
      <br> 
      <div class="chart"> 
       <div id="sachsen_anhalt_Table_div"></div> 
+      <p align="right">Quelle: <a href="https://www.mdr.de/sachsen-anhalt/corona-virus-covid-aktuelle-entwicklungen-sonntag-100.html" target="_blank">MDR Sachsen-Anhalt</a></p> 
+     </div> 
+    </section> <!-- Datendiagramme --> <!-- Barchart --> 
+    <section id="barchart" class="main special"> 
+     <header class="spotlight"> 
+      <h2>Barchart von Fällen</h2> 
+     </header> 
+     <div class="chart"> 
+      <div id="sachsen-anhalt_div"></div> 
       <p align="right">Quelle: <a href="https://ms.sachsen-anhalt.de/themen/gesundheit/aktuell/coronavirus/" target="_blank">MS Sachsen-Anhalt</a></p> 
      </div> 
     </section> <!-- Datendiagramme --> 

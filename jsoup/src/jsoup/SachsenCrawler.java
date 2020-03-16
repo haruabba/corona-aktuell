@@ -72,7 +72,7 @@ public class SachsenCrawler {
         	Element row = iterator.next();
             Elements tds = row.select("td");
             if (tds.get(0).text().contains("Gesamtzahl")) {
-            	setSachsenCounter(tds.get(2).html());
+            	setSachsenCounter(tds.get(1).html());
             	break;
             }
             String stadt = setStadtName(tds.get(0).text());
@@ -100,8 +100,10 @@ public class SachsenCrawler {
 			return firstElement;
 		if (firstElement.isBlank() && !secondElement.isBlank())
 			return secondElement;
+		/*
 		if (!firstElement.isBlank() && !secondElement.isBlank())
 			return Integer.toString(Integer.valueOf(firstElement) + Integer.valueOf(secondElement));
+		*/
 		return "0";
 	}
 	
