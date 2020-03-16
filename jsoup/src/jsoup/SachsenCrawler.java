@@ -76,7 +76,7 @@ public class SachsenCrawler {
             	break;
             }
             String stadt = setStadtName(tds.get(0).text());
-            String confirmedCount = setConfirmedCount(tds.get(1).text(), tds.get(2).text());
+            String confirmedCount = setConfirmedCount(tds.get(1).text());
             String deathCount = setDeathCount(tds.get(1).text());
             array.add(setGoogleFormatJsonRowObject(new JSONObject(), stadt, confirmedCount, deathCount));
         }
@@ -95,15 +95,9 @@ public class SachsenCrawler {
 		return tableRow.replace("Landeshauptstadt ", "").replace("Stadt ", "").replace("Landkreis", "LK");
 	}
 	
-	private static String setConfirmedCount(String firstElement, String secondElement) {
-		if (!firstElement.isBlank() && secondElement.isBlank())
+	private static String setConfirmedCount(String firstElement) {
+		if (!firstElement.isBlank())
 			return firstElement;
-		if (firstElement.isBlank() && !secondElement.isBlank())
-			return secondElement;
-		/*
-		if (!firstElement.isBlank() && !secondElement.isBlank())
-			return Integer.toString(Integer.valueOf(firstElement) + Integer.valueOf(secondElement));
-		*/
 		return "0";
 	}
 	
