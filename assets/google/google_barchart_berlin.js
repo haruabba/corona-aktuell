@@ -2,12 +2,18 @@ google.charts.load('current', {'packages':['bar']});
 google.charts.setOnLoadCallback(drawStuff);
 
   function drawStuff() {
-    var germanyData = new google.visualization.arrayToDataTable(berlinBezirk);
+    var jsonData = $.ajax({
+      url: "https://raw.githubusercontent.com/haruabba/corona-aktuell/master/berlin_dataset.json",
+      dataType: "json",
+      async: false,
+    }).responseText;
+
+    var germanyData = new google.visualization.arrayToDataTable(jsonData);
 
     var options = {
         chart: {
             title: 'Status',
-            subtitle: 'Insgesamt 48 wurden infiziert (Quelle: Robert Koch-Instituts)'
+            subtitle: 'Quelle: LAGeSO/SurvNet'
           },
         height: 400,
         chartArea: {left: 0, top: 0, width: "100%", height: "100%"},
