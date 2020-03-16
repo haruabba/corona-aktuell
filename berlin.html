@@ -74,26 +74,29 @@
    <nav id="nav"> 
     <ul> 
      <li><a href="https://haruabba.github.io/corona-aktuell/" class="active">Deutschland</a></li> 
-     <li><a href="#barchart">Barchart</a></li> 
+     <li><a href="#karte">Karte</a></li> 
      <li><a href="#linechart">Linechart</a></li> 
      <li><a href="#notfallkontakte">Notfallkontakte</a></li> 
      <li><a href="#untersuchungsstellen">Untersuchungsstellen</a></li> 
      <li><a href="#dataquelle">Datenquelle</a></li> 
     </ul> 
    </nav> <!-- Main --> 
-   <div id="main"> <!-- Content --> <!-- Barchart --> 
-    <section id="barchart" class="main special"> 
+   <div id="main"> <!-- Content -->
+    <section id="karte" class="main special"> 
      <header class="spotlight"> 
       <h2>Bezirke von Fällen</h2> 
      </header> 
+     <iframe id="datawrapper-chart-63ZUq" src="https://datawrapper.dwcdn.net/63ZUq/12/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="400"></iframe>
+     <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();
+     </script> <br><br><br>
      <div class="chart"> 
       <div id="berlin_div"></div> 
-      <p align="right">Quelle: <a href="https://www.tagesspiegel.de/berlin/coronavirus-in-der-hauptstadt-an-diesen-sechs-orten-koennen-sich-berliner-bald-testen-lassen/25605226.html">Der Tagesspiegel</a></p> 
+      <p align="right">Quelle: <a href="https://www.tagesspiegel.de/berlin/infizierte-hotlines-anlaufstellen-coronavirus-in-berlin-das-ist-der-aktuelle-stand/25616798.html">Der Tagesspiegel</a></p> 
      </div> 
-    </section> <!-- Datendiagramme --> 
+    </section> <!-- Karte -->  
     <section id="linechart" class="main special"> 
      <header class="spotlight"> 
-      <h2>Fälle nach Datum</h2> 
+      <h2>Linechart von Fällen</h2> 
      </header> 
      <div class="chart"> 
       <div id="linechart_material_berlin"></div> 
@@ -133,7 +136,7 @@
             </iframe>
             <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
             </script>
-    </div><br><br>
+    </div><br>
      <div class="table-wrapper"> 
       <table> 
        <thead> 
