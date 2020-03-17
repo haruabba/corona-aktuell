@@ -1,18 +1,18 @@
 {
 	"rows":
 	[
-		{"c":[{"v":"Charlottenburg-Wilmersdorf","f":"Charlottenburg-Wilmersdorf"},{"v":"54"},{"v":"0"}]},
-		{"c":[{"v":"Friedrichshain-Kreuzberg","f":"Friedrichshain-Kreuzberg"},{"v":"33"},{"v":"0"}]},
-		{"c":[{"v":"Lichtenberg","f":"Lichtenberg"},{"v":"12"},{"v":"0"}]},
-		{"c":[{"v":"Marzahn-Hellersdorf","f":"Marzahn-Hellersdorf"},{"v":"11"},{"v":"0"}]},
-		{"c":[{"v":"Mitte","f":"Mitte"},{"v":"51"},{"v":"0"}]},
-		{"c":[{"v":"Neukölln","f":"Neukölln"},{"v":"21"},{"v":"0"}]},
-		{"c":[{"v":"Pankow","f":"Pankow"},{"v":"41"},{"v":"0"}]},
+		{"c":[{"v":"Charlottenburg-Wilmersdorf","f":"Charlottenburg-Wilmersdorf"},{"v":"57"},{"v":"0"}]},
+		{"c":[{"v":"Friedrichshain-Kreuzberg","f":"Friedrichshain-Kreuzberg"},{"v":"40"},{"v":"0"}]},
+		{"c":[{"v":"Lichtenberg","f":"Lichtenberg"},{"v":"16"},{"v":"0"}]},
+		{"c":[{"v":"Marzahn-Hellersdorf","f":"Marzahn-Hellersdorf"},{"v":"14"},{"v":"0"}]},
+		{"c":[{"v":"Mitte","f":"Mitte"},{"v":"59"},{"v":"0"}]},
+		{"c":[{"v":"Neukölln","f":"Neukölln"},{"v":"24"},{"v":"0"}]},
+		{"c":[{"v":"Pankow","f":"Pankow"},{"v":"49"},{"v":"0"}]},
 		{"c":[{"v":"Reinickendorf","f":"Reinickendorf"},{"v":"13"},{"v":"0"}]},
 		{"c":[{"v":"Spandau","f":"Spandau"},{"v":"11"},{"v":"0"}]},
-		{"c":[{"v":"Steglitz-Zehlendorf","f":"Steglitz-Zehlendorf"},{"v":"40"},{"v":"0"}]},
-		{"c":[{"v":"Tempelhof-Schöneberg","f":"Tempelhof-Schöneberg"},{"v":"31"},{"v":"0"}]},
-		{"c":[{"v":"Treptow-Köpenick","f":"Treptow-Köpenick"},{"v":"14"},{"v":"0"}]}
+		{"c":[{"v":"Steglitz-Zehlendorf","f":"Steglitz-Zehlendorf"},{"v":"47"},{"v":"0"}]},
+		{"c":[{"v":"Tempelhof-Schöneberg","f":"Tempelhof-Schöneberg"},{"v":"34"},{"v":"0"}]},
+		{"c":[{"v":"Treptow-Köpenick","f":"Treptow-Köpenick"},{"v":"19"},{"v":"0"}]}
 	],
 	"cols":
 	[
