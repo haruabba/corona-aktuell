@@ -29,14 +29,14 @@ public class CoronaDriver {
 	private static void updateCounterValues() {
 		DataSynchronizer.updateCounterValues(HTMLFILE, DataSynchronizer.getWorldCounterValues(), DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getWorldValueDifferences(), DataSynchronizer.getGermanyValueDifferences());
 		DataSynchronizer.updateGermanyCounterValues(BERLINHTML);
-		DataSynchronizer.updateCounterValues(SACHSENHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getSachsenCounterValues(), DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenValueDifferences());
+		//DataSynchronizer.updateCounterValues(SACHSENHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getSachsenCounterValues(), DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenValueDifferences());
 		DataSynchronizer.updateCounterValues(SACHSENANHALTHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getSachsenAnhaltCounterValues(), DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenAnhaltValueDifferences());
 	}
 	
 	private static void updateDifferenceValues() {
 		DataSynchronizer.updateDifferenceValues(HTMLFILE, DataSynchronizer.getWorldValueDifferences(), DataSynchronizer.getGermanyValueDifferences());
 		DataSynchronizer.updateGermanyDifferenceValues(BERLINHTML);
-		DataSynchronizer.updateDifferenceValues(SACHSENHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenValueDifferences());
+		//DataSynchronizer.updateDifferenceValues(SACHSENHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenValueDifferences());
 		DataSynchronizer.updateDifferenceValues(SACHSENANHALTHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenAnhaltValueDifferences());
 	}
 	
