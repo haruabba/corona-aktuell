@@ -43,7 +43,7 @@ public class RkiCrawler {
 	public static void crawlData() {
 		try {	
 	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
-	        setTableIterator(doc.select("table tr").iterator());
+	        setTableIterator(doc.select("tbody tr").iterator());
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
@@ -90,23 +90,16 @@ public class RkiCrawler {
 	@SuppressWarnings("unchecked")
 	private static JSONArray setGoogleFormatJsonRowArray(JSONArray array, Iterator<Element> iterator) {
         //remove header row
-        iterator.next();
         while (iterator.hasNext()) {
         	Element row = iterator.next();
             Elements tds = row.select("td");
             if(tds.get(0).text().equals("Gesamt")) break;
             String bundesland = tds.get(0).text();
-            String confirmedCount = tds.get(1).text().split(" ")[0].replace(".", "");
-            String deathCount = setDeathCount(tds.get(1).text());
+            String confirmedCount = tds.get(1).text().replace(".", "");
+            String deathCount = tds.get(4).text();
             array.add(setGoogleFormatJsonRowObject(new JSONObject(), bundesland, confirmedCount, deathCount));
         }
 		return array;
-	}
-	
-	private static String setDeathCount(String value) {
-        if(value.split(" ").length == 2) 
-        	return value.split(" ")[1].replace("(", "").replace(")", "");
-        return "0";
 	}
 	
 	@SuppressWarnings("unchecked")
