@@ -5,27 +5,25 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.StringJoiner;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class SachsenAnhaltCrawler {
 	
-	private static final String MSSACHSENANHALT = "https://ms.sachsen-anhalt.de/themen/gesundheit/aktuell/coronavirus/";
+	private static final String VERBRAUCHERSCHUTZSACHSENANHALT = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
 	private static final String SACHSENANHALTDATASET = "../sachsen_anhalt_dataset.json";
 	private static Iterator<Element> tableIterator;
 
 	public static void crawlData() {
 		try {	
-	        Document doc = Jsoup.connect(MSSACHSENANHALT).get();
-	        setTableIterator(doc.select(".MsoNormal").iterator());
+	        Document doc = Jsoup.connect(VERBRAUCHERSCHUTZSACHSENANHALT).get();
+	        setTableIterator(doc.select("table tr").iterator());
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
@@ -36,7 +34,7 @@ public class SachsenAnhaltCrawler {
 		// JSON object. Key value pairs are unordered. JSONObject supports java.util.Map interface.
         JSONObject obj = new JSONObject();
         JSONArray columnArray = setGoogleFormatJsonColumnArray(new JSONArray());
-        JSONArray rowArray = setGoogleFormatJsonRowArray(new JSONArray());
+        JSONArray rowArray = setGoogleFormatJsonRowArray(new JSONArray(), getTableIterator());
         obj.put("cols", columnArray);
         obj.put("rows", rowArray);
         //Write JSON file
@@ -69,64 +67,39 @@ public class SachsenAnhaltCrawler {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private static JSONArray setGoogleFormatJsonRowArray(JSONArray array) {
-		List<String> tableRows;
-		String[] tableItems;
-		try {
-			tableRows = parsingHtmlString();
-			tableItems = tableRows.get(0).split("<br>"); 
-			setSachsenAnhaltCounter(tableRows.get(1));
-	        for(String item : tableItems) {
-	            String[] tableElements = item.split(" ");
-	            String stadt = setStadtName(tableElements);
-	            String confirmedCount = setConfirmedCount(tableElements);
-	            String deathCount = setDeathCount(tableElements);
-	            array.add(setGoogleFormatJsonRowObject(new JSONObject(), stadt, confirmedCount, deathCount));
-	        }
-		} catch (NullPointerException e) {
-            e.printStackTrace();
+	private static JSONArray setGoogleFormatJsonRowArray(JSONArray array, Iterator<Element> iterator) {
+        //remove header row
+        iterator.next();
+        while (iterator.hasNext()) {
+        	Element row = iterator.next();
+            Elements tds = row.select("td");
+            if(tds.get(0).text().equals("Gesamtzahl ST")) {
+            	setSachsenAnhaltCounter(tds.get(1).text());
+            	break;
+            }
+            String stadt = setStadtName(tds.get(0).text());
+            String confirmedCount = tds.get(1).text();
+            String deathCount = setDeathCount(tds.get(1).text());
+            array.add(setGoogleFormatJsonRowObject(new JSONObject(), stadt, confirmedCount, deathCount));
         }
 		return array;
 	}
 	
-	private static List<String> parsingHtmlString() {
-		List<String> tableRows = new ArrayList<String>();
-        while (getTableIterator().hasNext()) {
-        	Element row = getTableIterator().next();
-    		if(row.text().isBlank()) continue;
-            if(row.text().contains("LK")){
-            	tableRows.add(row.html());
-            }
-        	if(row.text().contains("Gesamtergebnis")) {
-        		tableRows.add(row.text());
-        		break;
-        	}
-        }
-        return tableRows;
+	private static String setDeathCount(String value) {
+        if(value.split(" ").length == 2) 
+        	return value.split(" ")[1].replace("(", "").replace(")", "");
+        return "0";
 	}
 	
 	private static void setSachsenAnhaltCounter(String tableRow) {
-        String[] tableElements = tableRow.split(" ");
-        String newCounter = tableElements[1].replace("<b>", "").replace("</b>", "");
+        String newCounter = tableRow;
         DataSynchronizer.getSachsenAnhaltCounterValues().add(newCounter);
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
 	}
 	
-	private static String setStadtName(String[] rowElements) {
-		StringJoiner  joiner = new StringJoiner(" ");
-		for (int i = 1; i < rowElements.length - 1; i++) {
-			joiner.add(rowElements[i]);
-		}
-		return joiner.toString();
-	}
-	
-	private static String setConfirmedCount(String[] rowElements) {
-		return rowElements[rowElements.length - 1].replace("&nbsp;", "");
-	}
-	
-	private static String setDeathCount(String[] rowElements) {
-		return "0";
+	private static String setStadtName(String rowElement) {
+		return rowElement.substring(3);
 	}
 	
 	@SuppressWarnings("unchecked")
