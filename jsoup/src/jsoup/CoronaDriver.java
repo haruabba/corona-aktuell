@@ -2,7 +2,7 @@ package jsoup;
 
 public class CoronaDriver {
 	
-	private static final String HTMLFILE = "../index.html";
+	private static final String HTMLFILE = "../deutschland.html";
 	private static final String BERLINHTML = "../berlin.html";
 	private static final String SACHSENHTML = "../sachsen.html";
 	private static final String SACHSENANHALTHTML = "../sachsen-anhalt.html";
