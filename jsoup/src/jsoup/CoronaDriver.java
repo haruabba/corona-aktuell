@@ -12,8 +12,8 @@ public class CoronaDriver {
 		WorldometerCrawler.setCounterValues();
 		RkiCrawler.crawlData();
 		RkiCrawler.writeJson();
-		SachsenCrawler.crawlData();
-		SachsenCrawler.writeJson();
+		//SachsenCrawler.crawlData();
+		//SachsenCrawler.writeJson();
 		SachsenAnhaltCrawler.crawlData();
 		SachsenAnhaltCrawler.writeJson();
 		updateHtmlFiles();

@@ -1,1 +1,17 @@
-{"rows":[{"c":[{"v":"Dresden","f":"Dresden"},{"v":"30 (+10)"},{"v":"+10"}]},{"c":[{"v":"Chemnitz","f":"Chemnitz"},{"v":"13 (+3)"},{"v":"+3"}]},{"c":[{"v":"Leipzig","f":"Leipzig"},{"v":"53 (+18)"},{"v":"+18"}]},{"c":[{"v":"LK Bautzen","f":"LK Bautzen"},{"v":"19 (+5)"},{"v":"+5"}]},{"c":[{"v":"Erzgebirgskreis","f":"Erzgebirgskreis"},{"v":"8"},{"v":"0"}]},{"c":[{"v":"LK Görlitz","f":"LK Görlitz"},{"v":"9"},{"v":"0"}]},{"c":[{"v":"LK Leipzig","f":"LK Leipzig"},{"v":"17"},{"v":"0"}]},{"c":[{"v":"LK Meißen","f":"LK Meißen"},{"v":"11"},{"v":"0"}]},{"c":[{"v":"LK Mittelsachsen","f":"LK Mittelsachsen"},{"v":"3 (+3)"},{"v":"+3"}]},{"c":[{"v":"LK Nordsachsen","f":"LK Nordsachsen"},{"v":"2 (+4)"},{"v":"+4"}]},{"c":[{"v":"LK Sächsische Schweiz-Osterzgebirge","f":"LK Sächsische Schweiz-Osterzgebirge"},{"v":"13 (+1)"},{"v":"+1"}]},{"c":[{"v":"Vogtlandkreis","f":"Vogtlandkreis"},{"v":"2"},{"v":"0"}]},{"c":[{"v":"LK Zwickau","f":"LK Zwickau"},{"v":"18 (+5)"},{"v":"+5"}]}],"cols":[{"pattern":"","id":"","label":"Stadt","type":"string"},{"pattern":"","id":"","label":"Bestätiger","type":"number"},{"pattern":"","id":"","label":"Tod","type":"number"}]}
+{"rows":
+	[
+		{"c":[{"v":"Dresden","f":"Dresden"},{"v":"49"},{"v":"0"}]},
+		{"c":[{"v":"Chemnitz","f":"Chemnitz"},{"v":"18"},{"v":"0"}]},
+		{"c":[{"v":"Leipzig","f":"Leipzig"},{"v":"72"},{"v":"0"}]},
+		{"c":[{"v":"LK Bautzen","f":"LK Bautzen"},{"v":"32"},{"v":"0"}]},
+		{"c":[{"v":"Erzgebirgskreis","f":"Erzgebirgskreis"},{"v":"11"},{"v":"0"}]},
+		{"c":[{"v":"LK Görlitz","f":"LK Görlitz"},{"v":"9"},{"v":"0"}]},
+		{"c":[{"v":"LK Leipzig","f":"LK Leipzig"},{"v":"21"},{"v":"0"}]},
+		{"c":[{"v":"LK Meißen","f":"LK Meißen"},{"v":"12"},{"v":"0"}]},
+		{"c":[{"v":"LK Mittelsachsen","f":"LK Mittelsachsen"},{"v":"12"},{"v":"0"}]},
+		{"c":[{"v":"LK Nordsachsen","f":"LK Nordsachsen"},{"v":"5"},{"v":"0"}]},
+		{"c":[{"v":"LK Sächsische Schweiz-Osterzgebirge","f":"LK Sächsische Schweiz-Osterzgebirge"},{"v":"19"},{"v":"0"}]},
+		{"c":[{"v":"Vogtlandkreis","f":"Vogtlandkreis"},{"v":"3"},{"v":"0"}]},
+		{"c":[{"v":"LK Zwickau","f":"LK Zwickau"},{"v":"31"},{"v":"0"}]}
+	],
+	"cols":[{"pattern":"","id":"","label":"Stadt","type":"string"},{"pattern":"","id":"","label":"Bestätiger","type":"number"},{"pattern":"","id":"","label":"Tod","type":"number"}]}
