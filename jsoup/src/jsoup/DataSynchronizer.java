@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
+import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ import java.util.List;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 public class DataSynchronizer {
 	
@@ -66,16 +68,23 @@ public class DataSynchronizer {
 		File in = new File(fileName);
 		try {	
 			Document doc = Jsoup.parse(in, null);
+	        Elements elements = doc.select("font.fh5co-counter"); // a with href
 	        Iterator<Element> counterIterator = doc.select("span[data-to]").iterator();
         	int i = 0;
 	        while (counterIterator.hasNext()) {
 	        	Element row = counterIterator.next();
 	        	String difference;
 	        	if (i < 3) {
+	        		if(i == 2) {
+	        			elements.get(0).text(calculateDeathRate(firstCounter.get(0), firstCounter.get(1)));
+	        		}
 	        		difference = CalculateValueDifference(row.attr("data-to"), firstCounter.get(i));
 	        		firstDifference.add(i, difference);
 		        	row.attr("data-to", firstCounter.get(i));
 	        	} else {
+	        		if(i == 4) {
+	        			elements.get(1).text(calculateDeathRate(secondCounter.get(0), secondCounter.get(1)));
+	        		}
 	        		difference = CalculateValueDifference(row.attr("data-to"), secondCounter.get(i - 3));
 	        		secondDifference.add(i - 3, difference);
 		        	row.attr("data-to", secondCounter.get(i - 3));
@@ -88,6 +97,14 @@ public class DataSynchronizer {
 			e.printStackTrace();
 		}
 	}
+	
+	private static String calculateDeathRate(String value1, String value2) {
+		float result = Float.valueOf(value2) / Float.valueOf(value1) * 100;
+		DecimalFormat df = new DecimalFormat();
+		df.setMaximumFractionDigits(2);
+		return df.format(result).toString().replace(",", ".").concat("%");
+	}
+
 	
 	public static void updateGermanyDifferenceValues(String fileName) {
 		File in = new File(fileName);

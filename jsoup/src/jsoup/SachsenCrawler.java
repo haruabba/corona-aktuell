@@ -15,7 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class SachsenCrawler {
-	private static final String SMSSACHSEN = "https://www.sms.sachsen.de/coronavirus.html";
+	private static final String SMSSACHSEN = "https://www.coronavirus.sachsen.de/infektionsfaelle-in-sachsen-4151.html";
 	private static final String SACHSENDATASET = "../sachsen_dataset.json";
 	private static Iterator<Element> tableIterator;
 	
@@ -84,27 +84,35 @@ public class SachsenCrawler {
 	}
 	
 	private static void setSachsenCounter(String tableRow) {
-        String[] tableElements = tableRow.split("<strong>");
-        String newCounter = tableElements[1].replace("</strong>", "");
+        String[] tableElements = tableRow.split(" ");
+        String newCounter;
+        if (tableElements.length == 1) {
+        	newCounter = tableElements[0].replace("<strong>", "");
+        } else {
+        	newCounter = tableElements[1].replace("(", "").replace(")", "").replace("</strong>", "");
+        }
         DataSynchronizer.getSachsenCounterValues().add(newCounter);
         DataSynchronizer.getSachsenCounterValues().add("0");
         DataSynchronizer.getSachsenCounterValues().add("0");
 	}
 	
 	private static String setStadtName(String tableRow) {
-		return tableRow.replace("Landeshauptstadt ", "").replace("Stadt ", "").replace("Landkreis", "LK");
+		return tableRow.replace("Landeshauptstadt ", "").replace("Stadt ", "").replace("Landkreis ", "LK");
 	}
 	
-	private static String setConfirmedCount(String firstElement) {
-		if (!firstElement.isBlank())
-			return firstElement;
-		return "0";
+	private static String setConfirmedCount(String element) {
+		if(element.isBlank()) return "0";
+        String[] tableElements = element.split(" ");
+		if (tableElements.length == 1) {
+			return element;
+		} else {
+			int sum = Integer.valueOf(tableElements[0])+Integer.valueOf(tableElements[1].replace("+", "").replace("(", "").replace(")", ""));
+			 return String.valueOf(sum);
+		}
 	}
 	
 	private static String setDeathCount(String value) {
-        if(value.split(" ").length == 2) 
-        	return value.split(" ")[1].replace("(", "").replace(")", "");
-        return "0";
+		return "0";
 	}
 	
 	@SuppressWarnings("unchecked")
