@@ -1,17 +1,17 @@
 {"rows":
 	[
-		{"c":[{"v":"Dresden","f":"Dresden"},{"v":"49"},{"v":"0"}]},
+		{"c":[{"v":"Dresden","f":"Dresden"},{"v":"53"},{"v":"0"}]},
 		{"c":[{"v":"Chemnitz","f":"Chemnitz"},{"v":"18"},{"v":"0"}]},
-		{"c":[{"v":"Leipzig","f":"Leipzig"},{"v":"72"},{"v":"0"}]},
-		{"c":[{"v":"LK Bautzen","f":"LK Bautzen"},{"v":"32"},{"v":"0"}]},
-		{"c":[{"v":"Erzgebirgskreis","f":"Erzgebirgskreis"},{"v":"11"},{"v":"0"}]},
-		{"c":[{"v":"LK Görlitz","f":"LK Görlitz"},{"v":"9"},{"v":"0"}]},
-		{"c":[{"v":"LK Leipzig","f":"LK Leipzig"},{"v":"21"},{"v":"0"}]},
-		{"c":[{"v":"LK Meißen","f":"LK Meißen"},{"v":"12"},{"v":"0"}]},
-		{"c":[{"v":"LK Mittelsachsen","f":"LK Mittelsachsen"},{"v":"12"},{"v":"0"}]},
-		{"c":[{"v":"LK Nordsachsen","f":"LK Nordsachsen"},{"v":"5"},{"v":"0"}]},
-		{"c":[{"v":"LK Sächsische Schweiz-Osterzgebirge","f":"LK Sächsische Schweiz-Osterzgebirge"},{"v":"19"},{"v":"0"}]},
-		{"c":[{"v":"Vogtlandkreis","f":"Vogtlandkreis"},{"v":"3"},{"v":"0"}]},
-		{"c":[{"v":"LK Zwickau","f":"LK Zwickau"},{"v":"31"},{"v":"0"}]}
+		{"c":[{"v":"Leipzig","f":"Leipzig"},{"v":"94"},{"v":"0"}]},
+		{"c":[{"v":"LK Bautzen","f":"LK Bautzen"},{"v":"45"},{"v":"0"}]},
+		{"c":[{"v":"Erzgebirgskreis","f":"Erzgebirgskreis"},{"v":"16"},{"v":"0"}]},
+		{"c":[{"v":"LK Görlitz","f":"LK Görlitz"},{"v":"12"},{"v":"0"}]},
+		{"c":[{"v":"LK Leipzig","f":"LK Leipzig"},{"v":"28"},{"v":"0"}]},
+		{"c":[{"v":"LK Meißen","f":"LK Meißen"},{"v":"17"},{"v":"0"}]},
+		{"c":[{"v":"LK Mittelsachsen","f":"LK Mittelsachsen"},{"v":"17"},{"v":"0"}]},
+		{"c":[{"v":"LK Nordsachsen","f":"LK Nordsachsen"},{"v":"7"},{"v":"0"}]},
+		{"c":[{"v":"LK Sächsische Schweiz-Osterzgebirge","f":"LK Sächsische Schweiz-Osterzgebirge"},{"v":"25"},{"v":"0"}]},
+		{"c":[{"v":"Vogtlandkreis","f":"Vogtlandkreis"},{"v":"7"},{"v":"0"}]},
+		{"c":[{"v":"LK Zwickau","f":"LK Zwickau"},{"v":"50"},{"v":"0"}]}
 	],
 	"cols":[{"pattern":"","id":"","label":"Stadt","type":"string"},{"pattern":"","id":"","label":"Bestätiger","type":"number"},{"pattern":"","id":"","label":"Tod","type":"number"}]}
