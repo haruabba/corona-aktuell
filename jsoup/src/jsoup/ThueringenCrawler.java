@@ -84,8 +84,8 @@ public class ThueringenCrawler {
             	}
                 String stadt = th.text();
                 String confirmedCount = setConfirmedCount(tds.get(1).text());
-                String deathCount = setDeathCount(tds.get(4).text());
-                String genesenCount = setGenesenCount(tds.get(5).text());
+                String deathCount = setDeathCount(tds.get(5).text());
+                String genesenCount = setGenesenCount(tds.get(6).text());
                 array.add(setGoogleFormatJsonRowObject(new JSONObject(), stadt, confirmedCount, deathCount, genesenCount));
             }
 		return array;
@@ -93,8 +93,8 @@ public class ThueringenCrawler {
 	
 	private static void setThueringenCounter(Elements tableDatas) {
         DataSynchronizer.getThueringenCounterValues().add(tableDatas.get(1).text());
-        DataSynchronizer.getThueringenCounterValues().add(tableDatas.get(4).text());
         DataSynchronizer.getThueringenCounterValues().add(tableDatas.get(5).text());
+        DataSynchronizer.getThueringenCounterValues().add(tableDatas.get(6).text());
 	}
 	
 	
