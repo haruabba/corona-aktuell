@@ -83,7 +83,7 @@ public class ThueringenCrawler {
                 	break;
             	}
                 String stadt = th.text();
-                String confirmedCount = setConfirmedCount(tds.get(0).text());
+                String confirmedCount = setConfirmedCount(tds.get(1).text());
                 String deathCount = setDeathCount(tds.get(4).text());
                 String genesenCount = setGenesenCount(tds.get(5).text());
                 array.add(setGoogleFormatJsonRowObject(new JSONObject(), stadt, confirmedCount, deathCount, genesenCount));
