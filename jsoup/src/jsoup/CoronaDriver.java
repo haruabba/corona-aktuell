@@ -6,7 +6,8 @@ public class CoronaDriver {
 	private static final String BERLINHTML = "../berlin/index.html";
 	private static final String SACHSENHTML = "../sachsen/index.html";
 	private static final String SACHSENANHALTHTML = "../sachsen-anhalt/index.html";
-	private static final String THUERINGENTHTML = "../thueringen/index.html";
+	private static final String THUERINGENHTML = "../thueringen/index.html";
+	private static final String MECKLENBURGVORPOMMERNHTML = "../mecklenburg-vorpommern/index.html";
 
 
 	public static void main(String[] args) {
@@ -20,6 +21,8 @@ public class CoronaDriver {
 		SachsenAnhaltCrawler.writeJson();
 		ThueringenCrawler.crawlData();
 		ThueringenCrawler.writeJson();
+		MecklenburgVorpommernCrawler.crawlData();
+		MecklenburgVorpommernCrawler.writeJson();
 		updateHtmlFiles();
 		System.out.println("Done");
     }
@@ -35,7 +38,8 @@ public class CoronaDriver {
 		DataSynchronizer.updateGermanyCounterValues(BERLINHTML);
 		DataSynchronizer.updateCounterValues(SACHSENHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getSachsenCounterValues());
 		DataSynchronizer.updateCounterValues(SACHSENANHALTHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getSachsenAnhaltCounterValues());
-		DataSynchronizer.updateCounterValues(THUERINGENTHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getThueringenCounterValues());
+		DataSynchronizer.updateCounterValues(THUERINGENHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getThueringenCounterValues());
+		DataSynchronizer.updateCounterValues(MECKLENBURGVORPOMMERNHTML, DataSynchronizer.getGermanyCounterValues(), DataSynchronizer.getMecklenburgvorpommernCounterValues());
 	}
 	
 	private static void updateDifferenceValues() {
@@ -43,7 +47,7 @@ public class CoronaDriver {
 		DataSynchronizer.updateGermanyDifferenceValues(BERLINHTML);
 		DataSynchronizer.updateDifferenceValues(SACHSENHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenValueDifferences());
 		DataSynchronizer.updateDifferenceValues(SACHSENANHALTHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getSachsenAnhaltValueDifferences());
-		DataSynchronizer.updateDifferenceValues(THUERINGENTHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getThueringenValueDifferences());
+		DataSynchronizer.updateDifferenceValues(MECKLENBURGVORPOMMERNHTML, DataSynchronizer.getGermanyValueDifferences(), DataSynchronizer.getMecklenburgvorpommernValueDifferences());
 	}
 	
 	private static void updateDatetime() {
@@ -51,6 +55,7 @@ public class CoronaDriver {
 		DataSynchronizer.updateDatetime(BERLINHTML);
 		DataSynchronizer.updateDatetime(SACHSENHTML);
 		DataSynchronizer.updateDatetime(SACHSENANHALTHTML);
-		DataSynchronizer.updateDatetime(THUERINGENTHTML);
+		DataSynchronizer.updateDatetime(THUERINGENHTML);
+		DataSynchronizer.updateDatetime(MECKLENBURGVORPOMMERNHTML);
 	}
 }

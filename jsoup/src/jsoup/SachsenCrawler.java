@@ -16,7 +16,7 @@ import org.jsoup.select.Elements;
 
 public class SachsenCrawler {
 	private static final String SOURCE = "https://www.coronavirus.sachsen.de/infektionsfaelle-in-sachsen-4151.html";
-	private static final String SACHSENDATASET = "../sachsen_dataset.json";
+	private static final String DATASET = "../sachsen_dataset.json";
 	private static final String[] PREVVALUES = new String[] {"562","1","0"};
 	private static Iterator<Element> tableIterator;
 	
@@ -39,7 +39,7 @@ public class SachsenCrawler {
         obj.put("rows", rowArray);
          
         //Write JSON file
-        try (Writer writer = new OutputStreamWriter(new FileOutputStream(SACHSENDATASET), StandardCharsets.UTF_8)) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(DATASET), StandardCharsets.UTF_8)) {
         	writer.write(obj.toJSONString());
         	writer.flush();
         } catch (IOException e) {

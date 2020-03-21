@@ -16,7 +16,7 @@ import org.jsoup.select.Elements;
 
 public class ThueringenCrawler {
 	private static final String SOURCE = "https://www.landesregierung-thueringen.de/corona-bulletin/";
-	private static final String THUERINGENDATASET = "../thueringen_dataset.json";
+	private static final String DATASET = "../thueringen_dataset.json";
 	private static final String[] PREVVALUES = new String[] {"161","0","3"};
 	private static Iterator<Element> tableIterator;
 	
@@ -39,7 +39,7 @@ public class ThueringenCrawler {
         obj.put("rows", rowArray);
          
         //Write JSON file
-        try (Writer writer = new OutputStreamWriter(new FileOutputStream(THUERINGENDATASET), StandardCharsets.UTF_8)) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(DATASET), StandardCharsets.UTF_8)) {
         	writer.write(obj.toJSONString());
         	writer.flush();
         } catch (IOException e) {

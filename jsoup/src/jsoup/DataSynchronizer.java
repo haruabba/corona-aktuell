@@ -30,6 +30,8 @@ public class DataSynchronizer {
 	private static List<String> sachsenAnhaltValueDifferences = new ArrayList<String>();
 	private static List<String> thueringenCounterValues = new ArrayList<String>();
 	private static List<String> thueringenValueDifferences = new ArrayList<String>();
+	private static List<String> mecklenburgvorpommernCounterValues = new ArrayList<String>();
+	private static List<String> mecklenburgvorpommernValueDifferences = new ArrayList<String>();
 	
 	public static void setDifferenceValues(String[] prevValues, List<String> counter, List<String> difference) {
 		int index = 0;
@@ -244,5 +246,21 @@ public class DataSynchronizer {
 
 	public static void setThueringenCounterValues(List<String> thueringenCounterValues) {
 		DataSynchronizer.thueringenCounterValues = thueringenCounterValues;
+	}
+
+	public static List<String> getMecklenburgvorpommernCounterValues() {
+		return mecklenburgvorpommernCounterValues;
+	}
+
+	public static void setMecklenburgvorpommernCounterValues(List<String> mecklenburgvorpommernCounterValues) {
+		DataSynchronizer.mecklenburgvorpommernCounterValues = mecklenburgvorpommernCounterValues;
+	}
+
+	public static List<String> getMecklenburgvorpommernValueDifferences() {
+		return mecklenburgvorpommernValueDifferences;
+	}
+
+	public static void setMecklenburgvorpommernValueDifferences(List<String> mecklenburgvorpommernValueDifferences) {
+		DataSynchronizer.mecklenburgvorpommernValueDifferences = mecklenburgvorpommernValueDifferences;
 	}
 }

@@ -17,7 +17,7 @@ import org.jsoup.select.Elements;
 public class SachsenAnhaltCrawler {
 	
 	private static final String SOURCE = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
-	private static final String SACHSENANHALTDATASET = "../sachsen_anhalt_dataset.json";
+	private static final String DATASET = "../sachsen_anhalt_dataset.json";
 	private static final String[] PREVVALUES = new String[] {"217","0","0"};
 	private static Iterator<Element> tableIterator;
 
@@ -39,7 +39,7 @@ public class SachsenAnhaltCrawler {
         obj.put("cols", columnArray);
         obj.put("rows", rowArray);
         //Write JSON file
-        try (Writer writer = new OutputStreamWriter(new FileOutputStream(SACHSENANHALTDATASET), StandardCharsets.UTF_8)) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(DATASET), StandardCharsets.UTF_8)) {
         	writer.write(obj.toJSONString());
         	writer.flush();
         } catch (IOException e) {
@@ -96,7 +96,7 @@ public class SachsenAnhaltCrawler {
 	private static void setSachsenAnhaltCounter(String tableRow) {
         String newCounter = tableRow;
         DataSynchronizer.getSachsenAnhaltCounterValues().add(newCounter);
-        DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
+        DataSynchronizer.getSachsenAnhaltCounterValues().add("1");
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
 	}
 	

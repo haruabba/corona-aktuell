@@ -16,8 +16,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class RkiCrawler {
-	private static final String ROBERTKOCHINSTITUT = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
-	private static final String GERMANYDATASET = "../germany_dataset.json";
+	private static final String SOURCE = "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html";
+	private static final String DATASET = "../germany_dataset.json";
 	private static Iterator<Element> tableIterator;
 	
     private static final HashMap<String, String> germanyHashMap = new HashMap<>();
@@ -42,7 +42,7 @@ public class RkiCrawler {
 
 	public static void crawlData() {
 		try {	
-	        Document doc = Jsoup.connect(ROBERTKOCHINSTITUT).get();
+	        Document doc = Jsoup.connect(SOURCE).get();
 	        setTableIterator(doc.select("tbody tr").iterator());
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -59,7 +59,7 @@ public class RkiCrawler {
         obj.put("rows", rowArray);
          
         //Write JSON file
-        try (Writer writer = new OutputStreamWriter(new FileOutputStream(GERMANYDATASET), StandardCharsets.UTF_8)) {
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(DATASET), StandardCharsets.UTF_8)) {
         	writer.write(obj.toJSONString());
         	writer.flush();
         } catch (IOException e) {
