@@ -100,10 +100,6 @@ public class MecklenburgVorpommernCrawler {
         DataSynchronizer.getMecklenburgvorpommernValueDifferences().add("0");
 	}
 	
-	private static String caculateSumOfCounter(String newValue, String prevValue) {
-		int sum = Integer.valueOf(newValue) + Integer.valueOf(prevValue);
-		return String.valueOf(sum);
-	}
 	
 	private static String setStadtName(String tableRow) {
 		return tableRow.replace("Landeshauptstadt ", "").replace("Stadt ", "").replace("Landkreis ", "LK");

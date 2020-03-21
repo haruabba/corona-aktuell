@@ -96,7 +96,7 @@ public class SachsenAnhaltCrawler {
 	private static void setSachsenAnhaltCounter(String tableRow) {
         String newCounter = tableRow;
         DataSynchronizer.getSachsenAnhaltCounterValues().add(newCounter);
-        DataSynchronizer.getSachsenAnhaltCounterValues().add("1");
+        DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
         DataSynchronizer.getSachsenAnhaltCounterValues().add("0");
 	}
 	
