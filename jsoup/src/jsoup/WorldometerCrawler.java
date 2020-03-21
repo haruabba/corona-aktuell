@@ -9,13 +9,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class WorldometerCrawler {
-	private static final String WORLDOMETER = "https://www.worldometers.info/coronavirus/";
+	private static final String SOURCE = "https://www.worldometers.info/coronavirus/";
 	private static Iterator<Element> mainCounterIterator;
 	private static Iterator<Element> tableIterator;
 
 	public static void crawlData() {
 		try {
-	        Document doc = Jsoup.connect(WORLDOMETER).get();
+	        Document doc = Jsoup.connect(SOURCE).get();
 	        setMainCounterIterator(doc.getElementsByClass("maincounter-number").iterator());
 	        setTableIterator(doc.select("table tr").iterator());
 	        
@@ -24,19 +24,7 @@ public class WorldometerCrawler {
 	    }
 	}
 	
-	public static void setCounterValues() {
-		setWorldCounterValues();
-		setGermanyCounterValues();
-	}
-	
-	private static void setWorldCounterValues() {
-		while (getMainCounterIterator().hasNext()) {
-        	Element row = getMainCounterIterator().next();
-        	DataSynchronizer.getWorldCounterValues().add(row.text().replace(",", ""));
-        }
-	}
-	
-	private static void setGermanyCounterValues() {
+	public static void setWorldAndGermanyCounterValues() {
 		getTableIterator().next();
         while (getTableIterator().hasNext()) {
         	Element row = getTableIterator().next();
@@ -45,14 +33,26 @@ public class WorldometerCrawler {
             	//total cases
             	DataSynchronizer.getGermanyCounterValues().add(tds.get(1).text().replace(",", ""));
 	        	//new cases
-            	DataSynchronizer.getGermanyValueDifferences().add(tds.get(2).text().replace("+", ""));
+            	DataSynchronizer.getGermanyValueDifferences().add(tds.get(2).text());
 	        	//total deaths
             	DataSynchronizer.getGermanyCounterValues().add(tds.get(3).text());
 	        	//new deaths
-            	DataSynchronizer.getGermanyValueDifferences().add(tds.get(4).text().replace("+", ""));
+            	DataSynchronizer.getGermanyValueDifferences().add(tds.get(4).text());
 	        	//total recovered
             	DataSynchronizer.getGermanyCounterValues().add(tds.get(5).text());
-	        	break;
+            }
+            if(tds.get(0).text().equals("Total:")) {
+            	//total cases
+            	DataSynchronizer.getWorldCounterValues().add(tds.get(1).text().replace(",", ""));
+	        	//new cases
+            	DataSynchronizer.getWorldValueDifferences().add("+".concat(tds.get(2).text()));
+	        	//total deaths
+            	DataSynchronizer.getWorldCounterValues().add(tds.get(3).text().replace(",", ""));
+	        	//new deaths
+            	DataSynchronizer.getWorldValueDifferences().add("+".concat(tds.get(4).text()));
+	        	//total recovered
+            	DataSynchronizer.getWorldCounterValues().add(tds.get(5).text().replace(",", ""));
+            	break;
             }
         }
 	}

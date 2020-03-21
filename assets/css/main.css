@@ -3903,11 +3903,20 @@ input, select, textarea {
   font-family: "Source Sans Pro", sans-serif;
 }
 .fh5co-counters .fh5co-counter-death {
-  font-size: 30px;
+  font-size: 28px;
   display: block;
   color: red;
   width: 100%;
-  font-weight: 600;
+  font-weight: 500;
+  margin-bottom: .0em;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.fh5co-counters .fh5co-counter-cured {
+  font-size: 28px;
+  display: block;
+  color: green;
+  width: 100%;
+  font-weight: 500;
   margin-bottom: .0em;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -3918,6 +3927,6 @@ input, select, textarea {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   color: red;
 }		

@@ -9,8 +9,8 @@ function drawTable() {
     async: false,
   }).responseText;
 
-  var sachsenanhaltData = new google.visualization.DataTable(jsonData);
-  var sachsenanhaltTable = new google.visualization.Table(document.getElementById('berlin_Table_div'));
+  var berlinData = new google.visualization.DataTable(jsonData);
+  var berlinTable = new google.visualization.Table(document.getElementById('berlin_Table_div'));
 
-  sachsenanhaltTable.draw(sachsenanhaltData, {showRowNumber: true});
+  berlinTable.draw(berlinData, {showRowNumber: true});
 }

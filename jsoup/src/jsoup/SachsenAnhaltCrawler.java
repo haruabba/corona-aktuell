@@ -16,13 +16,14 @@ import org.jsoup.select.Elements;
 
 public class SachsenAnhaltCrawler {
 	
-	private static final String VERBRAUCHERSCHUTZSACHSENANHALT = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
+	private static final String SOURCE = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
 	private static final String SACHSENANHALTDATASET = "../sachsen_anhalt_dataset.json";
+	private static final String[] PREVVALUES = new String[] {"217","0","0"};
 	private static Iterator<Element> tableIterator;
 
 	public static void crawlData() {
 		try {	
-	        Document doc = Jsoup.connect(VERBRAUCHERSCHUTZSACHSENANHALT).get();
+	        Document doc = Jsoup.connect(SOURCE).get();
 	        setTableIterator(doc.select("table tr").iterator());
 	    } catch (IOException e) {
 	        e.printStackTrace();
@@ -75,6 +76,7 @@ public class SachsenAnhaltCrawler {
             Elements tds = row.select("td");
             if(tds.get(0).text().equals("Gesamtzahl ST")) {
             	setSachsenAnhaltCounter(tds.get(1).text());
+            	DataSynchronizer.setDifferenceValues(PREVVALUES, DataSynchronizer.getSachsenAnhaltCounterValues(), DataSynchronizer.getSachsenAnhaltValueDifferences());
             	break;
             }
             String stadt = setStadtName(tds.get(0).text());

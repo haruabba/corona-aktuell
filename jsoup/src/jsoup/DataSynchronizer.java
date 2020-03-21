@@ -28,6 +28,20 @@ public class DataSynchronizer {
 	private static List<String> sachsenValueDifferences = new ArrayList<String>();
 	private static List<String> sachsenAnhaltCounterValues = new ArrayList<String>();
 	private static List<String> sachsenAnhaltValueDifferences = new ArrayList<String>();
+	private static List<String> thueringenCounterValues = new ArrayList<String>();
+	private static List<String> thueringenValueDifferences = new ArrayList<String>();
+	
+	public static void setDifferenceValues(String[] prevValues, List<String> counter, List<String> difference) {
+		int index = 0;
+		while(index < 3) {
+			if (counter.get(index).equals("0")) difference.add(prevValues[index]);
+			else {
+				int diff = Integer.valueOf(counter.get(index)) - Integer.valueOf(prevValues[index]);
+				difference.add(index, "+".concat(String.valueOf(diff)));
+			}
+			index++;
+		}
+	}
 
 	public static void updateDatetime(String fileName) {
 		DateTimeFormatter datetime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");  
@@ -64,33 +78,24 @@ public class DataSynchronizer {
 		}
 	}
 	
-	public static void updateCounterValues(String fileName, List<String> firstCounter, List<String> secondCounter, List<String> firstDifference, List<String> secondDifference) {
+	public static void updateCounterValues(String fileName, List<String> firstCounter, List<String> secondCounter) {
 		File in = new File(fileName);
 		try {	
 			Document doc = Jsoup.parse(in, null);
-	        Elements elements = doc.select("font.fh5co-counter"); // a with href
+	        Elements elements = doc.select("font.fh5co-counter");
 	        Iterator<Element> counterIterator = doc.select("span[data-to]").iterator();
         	int i = 0;
 	        while (counterIterator.hasNext()) {
 	        	Element row = counterIterator.next();
-	        	String difference;
 	        	if (i < 3) {
-	        		if(i == 2) {
-	        			elements.get(0).text(calculateDeathRate(firstCounter.get(0), firstCounter.get(1)));
-	        		}
-	        		difference = CalculateValueDifference(row.attr("data-to"), firstCounter.get(i));
-	        		firstDifference.add(i, difference);
 		        	row.attr("data-to", firstCounter.get(i));
 	        	} else {
-	        		if(i == 4) {
-	        			elements.get(1).text(calculateDeathRate(secondCounter.get(0), secondCounter.get(1)));
-	        		}
-	        		difference = CalculateValueDifference(row.attr("data-to"), secondCounter.get(i - 3));
-	        		secondDifference.add(i - 3, difference);
 		        	row.attr("data-to", secondCounter.get(i - 3));
 	        	}
 	        	i++;
 	        }
+	        updateDeathRate(elements.get(0), firstCounter.get(0), firstCounter.get(1));
+	        updateDeathRate(elements.get(1), secondCounter.get(0), secondCounter.get(1));
 	        updateHtmlDocument(fileName, doc);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -98,8 +103,12 @@ public class DataSynchronizer {
 		}
 	}
 	
-	private static String calculateDeathRate(String value1, String value2) {
-		float result = Float.valueOf(value2) / Float.valueOf(value1) * 100;
+	private static void updateDeathRate(Element rate, String confirmedCases, String deathCases) {
+		rate.text(calculateDeathRate(confirmedCases, deathCases));
+	}
+	
+	private static String calculateDeathRate(String confirmedCases, String deathCases) {
+		float result = Float.valueOf(deathCases) / Float.valueOf(confirmedCases) * 100;
 		DecimalFormat df = new DecimalFormat();
 		df.setMaximumFractionDigits(2);
 		return df.format(result).toString().replace(",", ".").concat("%");
@@ -114,8 +123,8 @@ public class DataSynchronizer {
 	        int j = 0;
 	        while (differenceIterator.hasNext()) {
 	        	Element diff = differenceIterator.next();
-	        	if (j == 3) break;
-	        	diff.text(String.format("(+%s)", getGermanyValueDifferences().get(j)));
+	        	if (j == 2) break;
+	        	diff.text(String.format("(%s)", getGermanyValueDifferences().get(j)));
 	        	j++;
 	        }
 	        updateHtmlDocument(fileName, doc);
@@ -133,13 +142,11 @@ public class DataSynchronizer {
 	        int j = 0;
 	        while (differenceIterator.hasNext()) {
 	        	Element diff = differenceIterator.next();
-	        	if (j == 3) differenceIterator.hasNext();
-	        	if (j == 6) break;
-	        	if (j < 3) {
-		        	diff.text(String.format("(+%s)", firstDifference.get(j)));
+	        	if (j < 2) {
+		        	diff.text(String.format("(%s)", firstDifference.get(j)));
 	        	}
 	        	else {
-		        	diff.text(String.format("(+%s)", secondDifference.get(j - 3)));
+		        	diff.text(String.format("(%s)", secondDifference.get(j - 2)));
 	        	}
 	        	j++;
 	        }
@@ -158,10 +165,6 @@ public class DataSynchronizer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-	
-	private static String CalculateValueDifference(String valuePrev, String valueCurr) {
-		return Integer.toString(Integer.valueOf(valueCurr) - Integer.valueOf(valuePrev));
 	}
 
 	public static List<String> getWorldCounterValues() {
@@ -225,5 +228,21 @@ public class DataSynchronizer {
 
 	public static void setSachsenValueDifferences(List<String> sachsenValueDifferences) {
 		DataSynchronizer.sachsenValueDifferences = sachsenValueDifferences;
+	}
+
+	public static List<String> getThueringenValueDifferences() {
+		return thueringenValueDifferences;
+	}
+
+	public static void setThueringenValueDifferences(List<String> thueringenValueDifferences) {
+		DataSynchronizer.thueringenValueDifferences = thueringenValueDifferences;
+	}
+
+	public static List<String> getThueringenCounterValues() {
+		return thueringenCounterValues;
+	}
+
+	public static void setThueringenCounterValues(List<String> thueringenCounterValues) {
+		DataSynchronizer.thueringenCounterValues = thueringenCounterValues;
 	}
 }
