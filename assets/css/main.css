@@ -2424,11 +2424,13 @@ input, select, textarea {
 		}
 
             ul {
-				margin: 0 auto;
+				margin: auto;
             	width: 100%;
-                padding:0;
+                padding: 0;
                 text-align: center;
-                list-style:none;                
+                list-style:none;   
+                min-width: 200px;
+             
             }
             ul  li {
             	font-size: 20px;
