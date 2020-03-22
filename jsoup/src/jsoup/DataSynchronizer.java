@@ -35,7 +35,7 @@ public class DataSynchronizer {
 	
 	public static void setDifferenceValues(String[] prevValues, List<String> counter, List<String> difference) {
 		int index = 0;
-		while(index < 3) {
+		while(index < 2) {
 			if (counter.get(index).equals("0")) difference.add(index, "+".concat(prevValues[index]));
 			else {
 				int diff = Integer.valueOf(counter.get(index)) - Integer.valueOf(prevValues[index]);

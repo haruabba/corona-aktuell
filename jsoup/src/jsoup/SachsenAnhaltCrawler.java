@@ -18,7 +18,7 @@ public class SachsenAnhaltCrawler {
 	
 	private static final String SOURCE = "https://verbraucherschutz.sachsen-anhalt.de/hygiene/infektionsschutz/infektionskrankheiten/coronavirus/";
 	private static final String DATASET = "../sachsen_anhalt_dataset.json";
-	private static final String[] PREVVALUES = new String[] {"217","0","0"};
+	private static final String[] PREVVALUES = new String[] {"217","0"};
 	private static Iterator<Element> tableIterator;
 
 	public static void crawlData() {

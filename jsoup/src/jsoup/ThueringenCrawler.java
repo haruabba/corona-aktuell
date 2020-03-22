@@ -17,7 +17,7 @@ import org.jsoup.select.Elements;
 public class ThueringenCrawler {
 	private static final String SOURCE = "https://www.landesregierung-thueringen.de/corona-bulletin/";
 	private static final String DATASET = "../thueringen_dataset.json";
-	private static final String[] PREVVALUES = new String[] {"161","0","3"};
+	private static final String[] PREVVALUES = new String[] {"207","0"};
 	private static Iterator<Element> tableIterator;
 	
 	public static void crawlData() {
