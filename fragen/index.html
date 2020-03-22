@@ -50,6 +50,16 @@
 <div class="panel">
   <p>Bei vielen Menschen zeigen sich nur leichte Erkältungssymptome mit <b>Frösteln, trockenem Husten und Fieber</b>. Hinzu kommen können <b>Hals- und Kopfschmerzen, manchmal auch Durchfall</b>. Bei schweren Verläufen können <b>Atemprobleme oder eine Lungenentzündung</b> auftreten.</p>
 </div>
+<script>
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
 
 <button style="background-color: #eee" class="accordion">Ich glaube, ich habe mich infiziert - was mache ich jetzt?</button>
 <div class="panel">
@@ -291,6 +301,7 @@
   <script src="../assets/js/jquery.waypoints.min.js"></script> 
   <script src="../assets/js/jquery.flexslider-min.js"></script> 
   <script src="../assets/js/jquery.countTo.js"></script> <!-- Google Charts --> 
+  <script src="../assets/js/accordion.js"></script> <!-- Google Charts --> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
 	</body>
 </html>
