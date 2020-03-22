@@ -328,6 +328,44 @@ input, select, textarea {
 		border-bottom-color: rgba(255, 255, 255, 0.35);
 	}
 
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
 /* Row */
 
 	.row {
@@ -1920,7 +1958,7 @@ input, select, textarea {
 	input[type="button"],
 	button,
 	.button {
-		background-color: transparent;
+		background-color: #D3D3D3;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
 		color: #ffffff !important;
 	}
@@ -2212,6 +2250,8 @@ input, select, textarea {
 	}
 
 /* Icon */
+
+
 
 	.icon {
 		text-decoration: none;
