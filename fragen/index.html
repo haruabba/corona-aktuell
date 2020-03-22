@@ -1,16 +1,52 @@
-<!doctype html><!--
-  Stellar by HTML5 UP
-  html5up.net | @ajlkn
-  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html> 
+<!DOCTYPE HTML>
+<html>
  <head> 
   <script data-ad-client="ca-pub-5929218543774604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
-  <title>Berlin - Corona 19 (COVID-19) Echtzeit-Statusanzeige</title> 
+  <title>Fragen - Corona 19 (COVID-19) Echtzeit-Statusanzeige</title> 
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
   <meta name="keywords" content="Corona 19, Corona, COVID-19, Virus, Echtzeit-Statusanzeige"> 
   <meta name="author" content="Junghwa Park"> 
+<style>
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
   <link rel="stylesheet" href="../assets/css/main.css" type="text/css"> 
   <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet"> 
@@ -18,176 +54,232 @@
    <link rel="stylesheet" href="../assets/css/noscript.css"> 
   </noscript> 
  </head> 
- <body class="is-preload"> <!-- Wrapper --> 
-  <div id="wrapper"> <!-- Header --> 
-   <header id="header" class="alt"> <span class="logo"><img src="../images/corona_logo.svg" alt=""></span> 
-    <h1>COVID 19</h1> 
-    <p>Echtzeit-Statusanzeige</p> 
-    <br> 
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Header -->
+   <header id="header" class="alt"> <span class="logo"><img src="../images/question.svg" alt=""></span> 
+    <h1>Fragen</h1> 
+    <p>Was tun ?</p> 
    </header> <!-- Display --> 
-    
-   <nav id="nav"> 
-    <ul> 
-     <li><a href="#karte" class="active">Karte</a></li> 
-     <li><a href="#diagramme">Datendiagramme</a></li> 
-     <li><a href="#notfallkontakte">Notfallkontakte</a></li> 
-     <li><a href="#untersuchungsstellen">Untersuchungsstellen</a></li> 
-     <li><a href="#dataquelle">Datenquelle</a></li> 
-    </ul> 
-   </nav> <!-- Main --> 
-   <div id="main"> <!-- Content --> 
-    <section id="karte" class="main special"> 
-     <header class="spotlight"> 
-      <h2>Bezirke von Fällen</h2> 
-     </header> <iframe id="berlinkarte" src="https://datawrapper.dwcdn.net/63ZUq/12/" scrolling="no" frameborder="0" allowtransparency="true" style="width: 0; min-width: 100% !important;" height="650"></iframe> 
-     <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var t in a.data["datawrapper-height"]){var e=document.getElementById("datawrapper-chart-"+t);e&&(e.style.height=a.data["datawrapper-height"][t]+"px")}})}();
-     </script> 
-     <br> 
-     <br> 
-     <br> 
-     <div class="chart"> 
-      <div id="berlin_Table_div"></div> 
-      <p align="right">Quelle: <a href="https://www.berlin.de/sen/gpg/service/presse/2020/" target="_blank">LAGeSo</a></p> 
-     </div> 
-     <button style="background-color: #eee" class="accordion">Was sind die Symptome bei einer Infektion?</button>
+        <!-- Nav -->
+          <nav id="nav">
+            <ul>
+              <li><a href="#corona" class="active">COVID 19</a></li>
+              <li><a href="#visum">Visum</a></li>
+              <li><a href="#studium">Studium</a></li>
+              <li><a href="#final">Weitere</a></li>
+            </ul>
+          </nav>
+
+        <!-- Main -->
+          <div id="main">
+
+            <!-- Introduction -->
+              <section id="corona" class="main">
+                <div class="spotlight">
+                  <div class="content">
+                    <header class="major">
+                      <h2>Corona-Verdacht – was tun? </h2>
+                    </header>
+                    <br>
+
+<button style="background-color: #eee" class="accordion">Was sind die Symptome bei einer Infektion?</button>
 <div class="panel">
   <p>Bei vielen Menschen zeigen sich nur leichte Erkältungssymptome mit <b>Frösteln, trockenem Husten und Fieber</b>. Hinzu kommen können <b>Hals- und Kopfschmerzen, manchmal auch Durchfall</b>. Bei schweren Verläufen können <b>Atemprobleme oder eine Lungenentzündung</b> auftreten.</p>
 </div>
-    </section> <!-- Karte --> 
-    <section id="diagramme" class="main special"> 
-     <header class="spotlight"> 
-      <h2>Barchart von Fällen</h2> 
-     </header> 
-     <div class="chart"> 
-      <div id="berlin_div"></div> 
-      <br> 
-      <p align="right">Quelle: <a href="https://www.berlin.de/sen/gpg/service/presse/2020/" target="_blank">LAGeSo</a></p> 
-     </div> 
-     <br> 
-     <br> 
-     <header class="spotlight"> 
-      <h2>Linechart von Fällen</h2> 
-     </header> <iframe title="Zahl der Corona-Fälle in Berlin" aria-label="Interactive line chart" id="datawrapper-chart-Dot50" src="http://datawrapper.dwcdn.net/Dot50/4/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400"></iframe> 
-     <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
-</script> 
-     <p align="right">Quelle: <a href="https://www.rbb24.de/panorama/thema/2020/coronavirus/service/faelle-berlin-brandenburg-verdopplungszeit-fallzahlen-entwicklung.html" target="_blank">rbb24</a></p> 
-    </section> <!-- Datendiagramme --> 
-    <section id="notfallkontakte" class="main special"> 
-     <header class="spotlight"> 
-      <h2>Wichtige Telefonnummern</h2> 
-     </header> 
-     <div class="table-wrapper"> 
-      <table> 
-       <thead> 
-        <tr> 
-         <th>Name</th> 
-         <th>Telefon</th> 
-         <th>Email/Homepage</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td style="color: red">Hotline</td> 
-         <td><a href="tel:(030) 9028-2828">(030) 9028-2828</a></td> 
-         <td>-</td> 
-        </tr> 
-        <tr> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> 
-     <p style="text-align: right">Quelle: <a href="https://www.berlin.de/sen/gesundheit/themen/gesundheitsschutz-und-umwelt/infektionsschutz/coronavirus/">Senatsverwaltung für Gesundheit, Pflege und Gleichstellung</a></p> 
-    </section> <!-- Dataquelle --> 
-    <section id="untersuchungsstellen" class="main special"> 
-     <header class="spotlight"> 
-      <h2>Corona-Untersuchungsstellen</h2> 
-     </header> 
-     <div style="margin-bottom: 15px;" id="tabbable_1_4" tabindex="0"> <iframe title="Corona-Untersuchungsstellen Berlin" aria-label="Corona-Untersuchungsstellen Berlin" id="datawrapper-chart-Yt1dT" src="https://datawrapper.dwcdn.net/Yt1dT/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="335"> </iframe> 
-      <script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}})}();
-      </script> 
-     </div> 
-     <br> 
-     <div class="table-wrapper"> 
-      <table> 
-       <thead> 
-        <tr> 
-         <th>Name</th> 
-         <th>Adresse</th> 
-         <th>Telefon</th> 
-        </tr> 
-       </thead> 
-       <tbody> 
-        <tr> 
-         <td><b>Charité Campus Virchow-Klinikum</b></td> 
-         <td>Augustenburger Platz 1, 13353 Berlin</td> 
-         <td style="color: red"><a href="tel:(030) 9028-2828">Hotline</a></td> 
-        </tr> 
-        <tr> 
-         <td><b>DRK Kliniken Berlin Westend</b></td> 
-         <td>Spandauer Damm 130, Haus 10, 14050 Berlin</td> 
-         <td>-</td> 
-        </tr> 
-        <tr> 
-         <td><b>Vivantes Klinikum Prenzlauer Berg</b></td> 
-         <td>Zugang über Diesterwegstrasse, 10405 Berlin</td> 
-         <td style="color: red"><a href="tel:(030) 9028-2828">Hotline</a></td> 
-        </tr> 
-        <tr> 
-         <td><b>Vivantes Wenckebach-Klinikum</b></td> 
-         <td>Zugang über Albrechtstraße, 12099 Berlin</td> 
-         <td style="color: red"><a href="tel:(030) 9028-2828">Hotline</a></td> 
-        </tr> 
-        <tr> 
-         <td><b>Evangelisches Krankenhaus Königin Elisabeth Herzberge</b></td> 
-         <td>Herzbergstraße 79, 10365 Berlin</td> 
-         <td>-</td> 
-        </tr> 
-        <tr> 
-         <td><b>Gemeinschaftskrankenhaus Havelhöhe</b></td> 
-         <td>Kladower Damm 221, 14089 Berlin</td> 
-         <td><a href="tel:(030) 36501-7222">(030) 36501-7222</a></td> 
-        </tr> 
-       </tbody> 
-      </table> 
-     </div> 
-     <p style="text-align: right">Quelle: <a href="https://www.berlin.de/sen/gesundheit/themen/gesundheitsschutz-und-umwelt/infektionsschutz/coronavirus/">Senatsverwaltung für Gesundheit, Pflege und Gleichstellung</a></p> 
-    </section> <!-- Dataquelle --> 
-    <section id="dataquelle" class="main special"> 
-     <header class="major"> 
-      <h2>Sources<br> </h2> 
-      <div align="left"> 
-       <ol> 
-        <li id="ref-1"><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/">Novel Coronavirus (2019-nCoV) situation reports</a> - <a href="https://www.who.int/">World Health Organization</a> (WHO) </li> 
-        <li id="ref-2"><a href="https://www.cdc.gov/coronavirus/2019-ncov/cases-in-us.html">2019 Novel Coronavirus (2019-nCoV) in the U.S.</a> -. <a href="https://www.cdc.gov/">U.S. Centers for Disease Control and Prevention</a> (CDC) </li> 
-        <li id="ref-3"><a href="http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml">Outbreak Notification</a> - National Health Commission (NHC) of the People's Republic of China</li> 
-        <li id="ref-4"><a href="https://www.health.gov.au/health-topics/novel-coronavirus-2019-ncov">Novel coronavirus (2019-nCoV)</a> - Australian Government Department of Health</li> 
-        <li id="ref-5"><a href="https://www.medrxiv.org/content/10.1101/2020.01.23.20018549v2">Novel coronavirus 2019-nCoV: early estimation of epidemiological parameters and epidemic prediction</a> - Jonathan M. Read et al, Jan. 23,2020.</li> 
-        <li id="ref-6"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3524675">Early Transmissibility Assessment of a Novel Coronavirus in Wuhan, China</a> - Maimuna Majumder and Kenneth D. Mandl, Harvard University - Computational Health Informatics Program - Posted: 24 Jan 2020 Last revised: 27 Jan 2020</li> 
-        <li id="ref-7"><a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/news--wuhan-coronavirus/">Report 3: Transmissibility of 2019-nCoV</a> - 25 January 2020 - Imperial College London?</li> 
-        <li id="ref-8"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3809029/">Case fatality risk of influenza A(H1N1pdm09): a systematic review</a> - Epidemiology. Nov. 24, 2013</li> 
-        <li id="ref-9"><a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30185-9/fulltext#tbl1">A novel coronavirus outbreak of global health concern</a> - Chen Want et al. The Lancet. January 24, 2020 </li> 
-        <li id="ref-10"><a href="https://www.cdc.gov/coronavirus/2019-ncov/about/symptoms.html">Symptoms of Novel Coronavirus (2019-nCoV)</a> - CDC</li> 
-        <li id="ref-11"><a href="https://www.aljazeera.com/news/2020/01/chinas-national-health-commission-news-conference-coronavirus-200126105935024.html">China's National Health Commission news conference on coronavirus</a> - Al Jazeera. January 26, 2020 </li> 
-        <li id="ref-12"><a href="https://www.reuters.com/article/us-china-health-who/wuhan-lockdown-unprecedented-shows-commitment-to-contain-virus-who-representative-in-china-idUSKBN1ZM1G9">Wuhan lockdown 'unprecedented', shows commitment to contain virus: WHO representative in China</a> - Reuters. January 23, 2020</li> 
-        <li id="ref-13"><a href="https://www.who.int/news-room/detail/23-01-2020-statement-on-the-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-outbreak-of-novel-coronavirus-(2019-ncov)">Statement on the meeting of the International Health Regulations (2005) Emergency Committee regarding the outbreak of novel coronavirus (2019-nCoV)</a> - WHO, January 23, 2020 </li> 
-        <li id="ref-14"><a href="https://www.who.int/news-room/events/detail/2020/01/30/default-calendar/international-health-regulations-emergency-committee-on-novel-coronavirus-in-china">International Health Regulations Emergency Committee on novel coronavirus in China</a> - WHO, January 30, 2020 </li> 
-        <li id="ref-15"><a href="https://www.theonlinecitizen.com/2020/01/29/human-to-human-transmission-of-wuhan-virus-outside-of-china-confirmed-in-germany-japan-and-vietnam/">Human-to-human transmission of Wuhan virus outside of China, confirmed in Germany, Japan and Vietnam</a> - The Online Citizen, Jan. 29, 2020</li> 
-        <li id="ref-16"><a href="https://www.pscp.tv/WHO/1OdJrqEvgaeGX">Who: "Live from Geneva on the new #coronavirus outbreak"</a></li> 
-        <li id="ref-17"><a href="https://www.cdc.gov/media/releases/2020/p0130-coronavirus-spread.html">CDC Confirms Person-to-Person Spread of New Coronavirus in the United States</a> - CDC Press Release, Jan. 30, 2020</li> 
-        <li id="ref-18"> <a href="https://www.gov.uk/government/news/cmo-confirms-cases-of-coronavirus-in-england">CMO confirms cases of coronavirus in England</a> - CMO, UK, Jan. 31, 2020</li> 
-        <li id="ref-19"><a href="https://www.thelocal.fr/20200131/coronavirus-in-france-what-you-need-to-know">Coronavirus in France: what you need to know</a> - The Local France, Jan. 31, 2020</li> 
-        <li id="ref-20"><a href="https://tass.com/society/1115101">First two persons infected with coronavirus identified in Russia</a> - Tass, Jan. 31, 2020</li> 
-        <li id="ref-21"><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/jmv.25689?af=R">Updated understanding of the outbreak of 2019 novel coronavirus (2019nCoV) in Wuhan, China</a> - Journal of Medical Virology, Jan. 29, 2020 </li> 
-        <li id="ref-22"><a href="https://www.medrxiv.org/content/10.1101/2020.01.27.20018952v1.full.pdf">Estimating the effective reproduction number of the 2019-nCoV in China</a> - Zhidong Cao et al., Jan. 29, 2020</li> 
-        <li id="ref-23"><a href="https://www.sciencedirect.com/science/article/pii/S1201971220300539">Preliminary estimation of the basic reproduction number of novel coronavirus (2019-nCoV) in China, from 2019 to 2020: A data-driven analysis in the early phase of the outbreak</a> - Jan. 30, 2020 </li> 
-        <li id="ref-24"><a href="https://www.bbc.com/news/world-asia-china-51368873">Coronavirus: Window of opportunity to act, World Health Organization says</a> - BBC, Feb,\. 4, 2020</li> 
-        <li id="ref-25"><a href="https://jamanetwork.com/journals/jama/fullarticle/2761044?guestAccessKey=f61bd430-07d8-4b86-a749-bec05bfffb65">Clinical Characteristics of 138 Hospitalized Patients With 2019 Novel Coronavirus?Infected Pneumonia in Wuhan, China</a> - Wang et. al, JAMA, Feb. 7, 2020</li> 
-       </ol> 
-      </div> 
-     </header> 
-    </section> 
-   </div> <!-- Footer --> 
-   <footer id="footer"> 
+
+<button style="background-color: #eee" class="accordion">Ich glaube, ich habe mich infiziert - was mache ich jetzt?</button>
+<div class="panel">
+  <p>Wer spätestens 14 Tage nach einer Reise <b>oder auch</b> unabhängig davon Krankheitssymptome wie <b>Fieber</b>, Husten <b>und/oder</b> Atemnot entwickelt und vermutet, sich mit dem Coronavirus angesteckt zu haben, sollte zunächst seine Ärztin oder seinen Arzt telefonisch kontaktieren und <text style="color: red">keinesfalls die Praxis aufsuchen.</text><a href="https://www.mdr.de/nachrichten/coronavirus-infektion-checkliste-100.html" target="_blank"> Bild ansehen</a><br><br>
+  &#9757;<text style="color: red">Fieber</text> gilt hier als eine Vorbedinung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Ich habe keinen Hausarzt bzw. der Praxis ist geschlossen.</button>
+<div class="panel">
+  <p> Bei Symptomen wie Husten, Fieber oder Atemschwierigkeiten melden Sie sich telefonisch bei der Hotline der Kassenärztlichen Vereinigung <a style="color: red" href="tel:116 117">Hotline</a> rund um die Uhr erreichbar.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Warum werden nicht alle Menschen mit Krankheitssymptomen getestet?</button>
+<div class="panel">
+  <p> Das würde die vorhandenen Testkapazitäten in Deutschland bei weitem überschreiten, sagen Experten. Wie hoch die Kapazitäten pro Tag in Deutschland genau sind, kann im Moment niemand sagen - auch das Bundesgesundheitsministerium nicht. Getestet wird in Arztpraxen, Krankenhäusern, Gesundheitsämtern und Testzentren. Selbst alle Rückkehrer aus Risikogebieten zu testen - auch wenn sie keine Symptome haben - wäre nicht leistbar, sagt Egbert Tannich, Leiter des Bernhard-Nocht-Instituts für Tropenmedizin in Hamburg. <b>"Wir können nicht anfangen flächendeckend zu testen. Das übersteigt die Laborkapazität."</b></p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Ist man nach einer Infektion immun?</button>
+<div class="panel">
+  <p> Davon gehen Experten aus. <b>"Wir wissen aber nicht, wie lange die Immunität hält"</b>, erklärt RKI-Präsident Wieler. Es würden viele Tests entwickelt, um eine Immunität nachzuweisen. Etwa die Hälfte der Menschen, die sich angesteckt haben, bemerkten das gar nicht.</p>
+</div>
+                    
+</div>
+</div>
+</section>
+
+<!-- First Section -->
+<section id="visum" class="main">
+<div class="spotlight">
+<div class="content">
+  <header class="major">
+    <h2>Visum – Während der Corona-Pandemie </h2>
+  </header>
+  <br>
+
+<button style="background-color: #eee" class="accordion">Berlin</button>
+<div class="panel">
+    <ul style="text-align: left">
+    <li style="font-weight: bold">Ist das Landesamt für Einwanderung noch geöffnet?</li>
+    Ja, allerdings haben wir unsere Verfahren aus Gründen des Infektionsschutzes unserer Kundinnen und Kunden auf Online- und Schriftverfahren umgestellt.<br><br>
+    <li style="font-weight: bold">Ich habe einen Termin und keine Absage erhalten. Heißt das, dass ich für mein Anliegen persönlich vorsprechen kann?</li>
+    Nein, wir haben versucht, alle Kundinnen und Kunden, die bei der Online-Terminbuchung Ihre E-Mailadressen angegeben haben, über die Absage Ihrer Termine per E-Mail zu informieren.<br><br>
+    <li style="font-weight: bold">Ich habe einen Termin zur Abholung meines elektronischen Aufenthaltstitels (eAT). Kann ich diesen Termin weiterhin wahrnehmen?</li>
+    Nein, wir versuchen, Ihnen jetzt schnellstmöglich Ihre elektronischen Aufenthaltstitel (eAT) per Post zu übersenden. <b>Bei Empfang des eAT per Post beachten Sie bitte unbedingt unsere Hinweise im Begleitschreiben.</b><br><br>
+    <li style="font-weight: bold">Ich besitze die Staatsangehörigkeit von Australien, Israel, Japan, Kanada, der Republik Korea, von Neuseeland oder den Vereinigten Staaten von Amerika und möchte einen Aufenthaltstitel beantragen. Kann ich für diese Dienstleistung weiterhin vorsprechen?</li>
+    Nein, sollten Sie einen Antrag auf Erteilung eines Aufenthaltstitels stellen wollen, können Sie dies <b>per E-Mail oder postalisch</b> unter Verwendung des entsprechenden <a style="color:red" href="https://www.berlin.de/einwanderung/service/downloads/artikel.875129.php" target="_blank"> Antragsformulars</a> vornehmen. <b>Bitte beachten Sie, dass eine Bearbeitung Ihres Antrages ohne dieses Formular nicht möglich ist.</b><br><br>
+    <li style="font-weight: bold">Ich besitze die Staatsangehörigkeit von Australien, Israel, Japan, Kanada, der Republik Korea, von Neuseeland oder den Vereinigten Staaten von Amerika und möchte einen Aufenthaltstitel beantragen. Kann ich für diese Dienstleistung weiterhin vorsprechen?</li>
+    Nein, sollten Sie einen Antrag auf Erteilung eines Aufenthaltstitels stellen wollen, können Sie dies <b>per E-Mail oder postalisch</b> unter Verwendung des entsprechenden <a style="color:red" href="https://www.berlin.de/einwanderung/service/downloads/artikel.875129.php" target="_blank"> Antragsformulars</a> vornehmen. <b>Bitte beachten Sie, dass eine Bearbeitung Ihres Antrages ohne dieses Formular nicht möglich ist.</b><br><br>
+    <li><a href="https://www.berlin.de/einwanderung/aufenthalt/artikel.910158.php" target="_blank" class="button primary">Online-Registrierung</a></li><br>
+  </ul>
+</div>
+
+<button style="background-color: #eee" class="accordion">Leipzig</button>
+<div class="panel">
+  <ul style="text-align: left">
+    <li style="font-weight: bold">Findet mein vereinbarter Termin statt?</li>
+    Nein, Termine finden nicht statt.<br><br>
+    <li style="font-weight: bold">Meine Aufenthaltserlaubnis/mein Visum läuft ab, was muss ich tun?</li>
+    In diesem Fall stellen Sie bitte einen formlosen Antrag per E-Mail unter <a href = "mailto: aar@leipzig.de">aar@leipzig.de</a>. Bitte hängen Sie ein Scan/Foto Ihres Reisepasses oder bisherigen Aufenthaltstitels an. <b>Sie erhalten von der Ausländerbehörde per Post gegebenenfalls in vorläufiges Dokument.</b><br><br>
+    <li style="font-weight: bold">Meine Duldung/Aufenthaltsgestattung läuft ab, was muss ich tun?</li>
+    Die Ausländerbehörde sind die Ablaufdaten der Dokumente bekannt. <b>Sie erhalten ohne weitere Antragstellung ein Ersatzdokument übersandt.</b> Sollten Sie kein Dokument erhalten, melden Sie sich bitte formlos bei <a href = "mailto: aar@leipzig.de">aar@leipzig.de</a>.<br><br>
+    <li style="font-weight: bold">Ich möchte meinen elektronischen Aufenthaltstitel abholen, geht das?</li>
+    <b>Eine Abholung ist derzeit nicht möglich.</b> In begründeten Ausnahmefällen (Nachweis erforderlich) kann über <a href = "mailto: verpflichtungserklaerung@leipzig.de">verpflichtungserklaerung@leipzig.de</a> ein Vorsprachetermin angefragt werden.<br><br>
+    <li style="font-weight: bold">Ich habe einen Aufenthaltstitel und habe einen neuen Pass erhalten, was muss ich tun?</li>Ihr alter Aufenthaltstitel bleibt gültig. Führen Sie Ihren neuen und alten Pass mit sich. Kontaktieren Sie uns unter <a href = "mailto: aar@leipzig.de">aar@leipzig.de</a>, sollten Sie Ihren alten Pass abgegeben haben. Sie erhalten von uns gegebenenfalls eine vorläufige Bescheinigung.<br><br>
+    <li style="font-weight: bold">Ich benötige eine Verpflichtungserklärung, wie gehe ich vor?</li>
+    Bitte haben Sie Verständnis, dass wir bis auf Weiteres nur eingeschränkt Verpflichtungserklärungen ausstellen können. Bitte fragen Sie unter <a href = "mailto: verpflichtungserklaerung@leipzig.de"></a> einen Termin an.<br><br>
+  </ul>
+</div>
+
+<button style="background-color: #eee" class="accordion">Dresden</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Halle(Saale)</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Magdeburg</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Erfurt</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Weimar</button>
+<div class="panel">
+ <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Jena</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Rostock</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Greifswald</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+                    
+</div>
+</div>
+</section>
+
+
+<section id="studium" class="main">
+<div class="spotlight">
+<div class="content">
+  <header class="major">
+    <h2>Studium – Während der Corona-Pandemie </h2>
+  </header>
+  <br>
+
+<button style="background-color: #eee" class="accordion">Berlin</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Leipzig</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Dresden</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Halle(Saale)</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Magdeburg</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Erfurt</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Weimar</button>
+<div class="panel">
+ <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Jena</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Rostock</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+
+<button style="background-color: #eee" class="accordion">Greifswald</button>
+<div class="panel">
+  <p> In Bearbeitung.</p>
+</div>
+                    
+</div>
+</div>
+</section>
+            <!-- Introduction -->
+              <section id="final" class="main">
+                <div class="spotlight">
+                  <div class="content">
+                    <header class="major">
+                      <h2>Zusammen gegen Corona</h2>
+                    </header>
+                    <p>Wenn wir jetzt alle entschlossen handeln, können wir die Ausbreitung des neuartigen Coronavirus verlangsamen und viele Leben retten. Hier finden Sie aktuelle und verlässliche Antworten auf Ihre Fragen. Wir machen außerdem auf gute Ideen und Aktionen aufmerksam, wie wir helfen und handeln können. Denn wer sich schützt, schützt uns alle - wir bewältigen diese Krise am besten gemeinsam. Für weitere Fragen sehen: <a href="https://www.zusammengegencorona.de/informieren/" target="_blank"> Bundesministerium für Gesundheit</a></p>           
+</div>
+</div>
+</section>
+          </div>
+
+        <!-- Footer -->
+             <footer id="footer"> 
     <section> 
      <h2>Motivation</h2> 
      <p>The cases of COVID-19 in South Korea is rapidly increasing and the informations are exploding. But because of many services like this, Korean could get information much faster and efficiently to prepare themselves against the virus. This kind of websites will help the other countries as well, if the virus won't stop spreading.</p> 
@@ -224,7 +316,8 @@
      </dl> 
     </section> 
    </footer> 
-  </div> <!-- Scripts --> 
+</div>
+    <!-- Scripts -->
   <script src="../assets/js/jquery.min1.js"></script> 
   <script src="../assets/js/jquery.scrollex.min.js"></script> 
   <script src="../assets/js/jquery.scrolly.min.js"></script> 
@@ -239,11 +332,21 @@
   <script src="../assets/js/jquery.flexslider-min.js"></script> 
   <script src="../assets/js/jquery.countTo.js"></script> <!-- Google Charts --> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-  <script src="../assets/google/dataset_berlin.js"></script> 
-  <script src="../assets/google/google_barchart_berlin.js"></script> 
-  <script src="../assets/google/google_linechart_berlin.js"></script> 
-  <script src="../assets/google/google_tablechart_berlin.js"></script> 
-  <script src="../assets/google/dataset_berlin.js"></script>  
-  <script src="../assets/js/fragenlist.js"></script> <!-- Google Charts --> 
- </body>
+  <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </body>
 </html>
