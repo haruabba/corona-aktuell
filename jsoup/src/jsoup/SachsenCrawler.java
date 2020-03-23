@@ -17,7 +17,7 @@ import org.jsoup.select.Elements;
 public class SachsenCrawler {
 	private static final String SOURCE = "https://www.coronavirus.sachsen.de/infektionsfaelle-in-sachsen-4151.html";
 	private static final String DATASET = "../sachsen_dataset.json";
-	private static final String[] PREVVALUES = new String[] {"650","1"};
+	private static final String[] PREVVALUES = new String[] {"731","1"};
 	private static Iterator<Element> tableIterator;
 	
 	public static void crawlData() {
