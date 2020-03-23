@@ -2503,13 +2503,12 @@ input, select, textarea {
 		display: flex;
 		cursor: default;
 		list-style: none;
-		margin-left: 0em;
-		padding-left: 0em;
+		margin-left: -1em;
+		padding-left: 0;
 	}
 
 		ul.actions li {
 			padding: 0 0 0 1em;
-			width: 100%;
 			vertical-align: middle;
 		}
 
