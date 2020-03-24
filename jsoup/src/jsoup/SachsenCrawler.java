@@ -17,13 +17,15 @@ import org.jsoup.select.Elements;
 public class SachsenCrawler {
 	private static final String SOURCE = "https://www.coronavirus.sachsen.de/infektionsfaelle-in-sachsen-4151.html";
 	private static final String DATASET = "../sachsen_dataset.json";
-	private static final String[] PREVVALUES = new String[] {"731","1"};
+	private static final String[] PREVVALUES = new String[] {"865","3"};
 	private static Iterator<Element> tableIterator;
+	private static String deathCounter;
 	
 	public static void crawlData() {
 		try {	
 	        Document doc = Jsoup.connect(SOURCE).get();
 	        setTableIterator(doc.select("tbody tr").iterator());
+	        setDeathCount(doc.select("p"));
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
@@ -45,6 +47,13 @@ public class SachsenCrawler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+	}
+	
+	private static void setDeathCount(Elements paragraphs) {
+		for(Element p : paragraphs)
+			if(p.text().contains("Todesfälle:")) {
+				setDeathCounter(p.text().split(" ")[1]);
+			}
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -74,7 +83,7 @@ public class SachsenCrawler {
             Elements tds = row.select("td");
             if (tds.get(0).text().contains("Gesamtzahl")) {
             	setSachsenCounter(tds.get(1).html());
-            	DataSynchronizer.setDifferenceValues(PREVVALUES, DataSynchronizer.getSachsenCounterValues(), DataSynchronizer.getSachsenValueDifferences());
+            	DataSynchronizer.setDifferenceValues(PREVVALUES, DataSynchronizer.getSachsenCounterValues(), DataSynchronizer.getSachsenValueDifferences());	
             	break;
             }
             String stadt = setStadtName(tds.get(0).text());
@@ -94,7 +103,7 @@ public class SachsenCrawler {
         	newCounter = tableElements[1].replace("(", "").replace(")", "").replace("</strong>", "");
         }
         DataSynchronizer.getSachsenCounterValues().add(newCounter);
-        DataSynchronizer.getSachsenCounterValues().add("1");
+        DataSynchronizer.getSachsenCounterValues().add(getDeathCounter());
         DataSynchronizer.getSachsenCounterValues().add("0");
 	}
 	
@@ -139,5 +148,13 @@ public class SachsenCrawler {
 	}
 	public static void setTableIterator(Iterator<Element> tableIterator) {
 		SachsenCrawler.tableIterator = tableIterator;
+	}
+
+	public static String getDeathCounter() {
+		return deathCounter;
+	}
+
+	public static void setDeathCounter(String deathCounter) {
+		SachsenCrawler.deathCounter = deathCounter;
 	}
 }

@@ -17,7 +17,7 @@ import org.jsoup.select.Elements;
 public class MecklenburgVorpommernCrawler {
 	private static final String SOURCE = "https://www.lagus.mv-regierung.de/Services/Aktuelles/?id=158593&processor=processor.sa.pressemitteilung";
 	private static final String DATASET = "../mecklenburg_vorpommern_dataset.json";
-	private static final String[] PREVVALUES = new String[] {"182","0"};
+	private static final String[] PREVVALUES = new String[] {"201","0"};
 	private static Iterator<Element> tableIterator;
 	
 	public static void crawlData() {
