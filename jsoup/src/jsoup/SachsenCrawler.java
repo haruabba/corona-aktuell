@@ -98,7 +98,7 @@ public class SachsenCrawler {
         String[] tableElements = tableRow.split(" ");
         String newCounter;
         if (tableElements.length == 1) {
-        	newCounter = tableElements[0].replace("<strong>", "");
+        	newCounter = tableElements[0].replace(".", "").replace("<strong>", "").replace("</strong>", "");
         } else {
         	newCounter = tableElements[1].replace("(", "").replace(")", "").replace("</strong>", "");
         }
