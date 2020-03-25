@@ -35,11 +35,11 @@ public class WorldometerCrawler {
 	        	//new cases
             	DataSynchronizer.getGermanyValueDifferences().add(tds.get(2).text());
 	        	//total deaths
-            	DataSynchronizer.getGermanyCounterValues().add(tds.get(3).text());
+            	DataSynchronizer.getGermanyCounterValues().add(tds.get(3).text().replace(",", ""));
 	        	//new deaths
             	DataSynchronizer.getGermanyValueDifferences().add(tds.get(4).text());
 	        	//total recovered
-            	DataSynchronizer.getGermanyCounterValues().add(tds.get(5).text());
+            	DataSynchronizer.getGermanyCounterValues().add(tds.get(5).text().replace(",", ""));
             }
             if(tds.get(0).text().equals("Total:")) {
             	//total cases
